@@ -1,0 +1,17 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../scss/styles.scss",
+        "../scss/partials/_variables.scss",
+        "../scss/partials/_mixins.scss",
+        "../scss/partials/_helpers.scss",
+        "../scss/partials/_body.scss",
+        "../scss/partials/_header.scss",
+        "../scss/partials/_main.scss",
+        "../scss/partials/_footer.scss",
+        "../scss/partials/_mediaqueries.scss"
+    ],
+    "names": [],
+    "file": "styles.min.css"
+}
