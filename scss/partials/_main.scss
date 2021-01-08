@@ -1,0 +1,11 @@
+// Purple lines
+
+.superior_line, .inferior_line {
+    display: block;
+    background-color: $purple;
+    height: 5px;
+}
+
+.superior_line {
+    margin-bottom: 2.4%;
+}
