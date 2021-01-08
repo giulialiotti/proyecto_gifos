@@ -1,0 +1,25 @@
+header .flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    margin-left: 5.9%;
+    margin-top: 2.8%;
+}
+
+.menu nav ul li {
+    font-family: $fontM;
+    font-size: 15px;
+    font-weight: $boldM;
+    color: #FFFFFF;
+    text-align: center;
+    line-height: 60px;
+    list-style: none;
+    border-bottom: 1px solid rgba(255,255,255, 0.5);
+}
+
+.menu nav ul {
+    background: rgba(87,46,229,0.90);
+}

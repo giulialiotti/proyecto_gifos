@@ -1,2 +1,2 @@
-body{margin:0}.superior_line,.inferior_line{display:block;background-color:#572EE5;height:5px}.superior_line{margin-bottom:2.4%}
+body{margin:0}header .flex-container{display:flex;justify-content:space-between;align-items:center}.logo-container{margin-left:5.9%;margin-top:2.8%}.menu nav ul li{font-family:"Montserrat",sans-serif;font-size:15px;font-weight:700;color:#FFFFFF;text-align:center;line-height:60px;list-style:none;border-bottom:1px solid rgba(255,255,255,0.5)}.menu nav ul{background:rgba(87,46,229,0.9)}.superior-line,.inferior-line{display:block;background-color:#572EE5;height:5px}.superior-line{margin-bottom:2.4%}@media screen and (min-width: 960px){.menu nav ul{display:flex}}
 /*# sourceMappingURL=styles.min.css.map */
