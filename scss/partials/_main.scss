@@ -9,3 +9,41 @@
 .superior-line {
     margin-bottom: 2.4%;
 }
+
+// Section 1
+
+h1 {
+    font-family: $fontM;
+    font-size: rem(25px);
+    color: $purple;
+    text-align: center;
+    line-height: 33px;
+}
+
+.aqua-title {
+    color: $aqua;
+}
+
+.home-ilustration {
+    width: 72.8%;
+    height: 10.8%;
+    margin: 0 auto;
+}
+
+.home-ilustration img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+input[type="text"] {
+    border: none;
+}
+
+.input-container {
+    background: #FFFFFF;
+    border: 1px solid $purple;
+    border-radius: 27px;
+    width: 89.1%;
+    height: 4.2%;
+    margin: 0 auto;
+}
