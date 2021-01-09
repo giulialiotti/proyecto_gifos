@@ -73,7 +73,9 @@ input::placeholder {
     font-weight: $boldM;
     color: $purple;
     text-align: center;
-    line-height: 25px;
+    line-height: rem(25px);
+    margin-top: rem(31px);
+    margin-bottom: rem(2px);
 }
 
 #section-1 p {
@@ -82,8 +84,10 @@ input::placeholder {
     font-weight: $mediumM;
     color: $purple;
     text-align: center;
-    line-height: 25px;
+    line-height: rem(25px);
     padding: 0 20%;
+    margin-top: 0;
+    margin-bottom: rem(45px);
 }
 
 // Section 2
