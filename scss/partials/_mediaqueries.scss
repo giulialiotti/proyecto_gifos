@@ -18,9 +18,7 @@
     }
 
     .menu nav ul li {
-        font-family: $fontM;
         font-size: rem(13px);
-        font-weight: $boldM;
         color: $purple;
         line-height: rem(16px);
         border-bottom: none;
@@ -30,6 +28,27 @@
 
     .menu {
         margin-right: 10.8%;
+    }
+
+    // Section 1 
+
+    h1 {
+        font-size: rem(35px);
+        line-height: rem(50px);
+        padding: 0;
+        margin: 5% 17.6% 1.6%;
+    }
+
+    .input-container {
+        width: 38.3%;
+    }
+
+    .home-ilustration {
+        width: 27.7%;
+    }
+
+    input[type="text"] {
+        margin-left: rem(54px);
     }
 
 }
