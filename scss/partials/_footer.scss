@@ -1,0 +1,35 @@
+footer .share-text {
+    font-family: $fontR;
+    font-size: rem(15px);
+    font-weight: $regularR;
+    color: $black;
+    letter-spacing: 0;
+    text-align: center;
+    margin-top: rem(47px);
+}
+
+.social-media {
+    margin-top: rem(24px);
+    margin-bottom: rem(47.8px);
+}
+
+.social-media ul {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 37%; 
+}
+
+.social-media ul li {
+    list-style: none;
+}
+
+footer .copy-text {
+    font-family: $fontR;
+    font-size: rem(14px);
+    font-weight: $regularR;
+    color: $black;
+    letter-spacing: 0;
+    line-height: 20px;
+    text-align: center;
+    margin-bottom: rem(24px);
+}
