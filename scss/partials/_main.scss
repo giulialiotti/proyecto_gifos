@@ -15,6 +15,7 @@
 h1 {
     font-family: $fontM;
     font-size: rem(25px);
+    font-weight: $boldM;
     color: $purple;
     text-align: center;
     line-height: 33px;
@@ -46,4 +47,57 @@ input[type="text"] {
     width: 89.1%;
     height: 4.2%;
     margin: 0 auto;
+}
+
+#section-1 h3 {
+    font-family: $fontM;
+    font-size: rem(16px);
+    font-weight: $boldM;
+    color: $purple;
+    text-align: center;
+    line-height: 25px;
+}
+
+#section-1 p {
+    font-family: $fontM;
+    font-size: rem(14px);
+    font-weight: $mediumM;
+    color: $purple;
+    text-align: center;
+    line-height: 25px;
+    padding: 0 20%;
+}
+
+// Section 2
+
+#section-2 {
+    background: #F3F5F8;
+    padding-top: 3.8%;
+    padding-bottom: rem(86px);
+}
+
+#section-2 h2 {
+    font-family: $fontM;
+    font-size: rem(20px);
+    font-weight: $boldM;
+    color: $purple;
+    text-align: center;
+    line-height: rem(30px);
+}
+
+#section-2 p {
+    font-family: $fontR;
+    font-size: rem(16px);
+    font-weight: $regularR;
+    color: $black;
+    text-align: center;
+    line-height: rem(23px);
+    padding: 0 5.6%;
+    margin-bottom: rem(32px);
+}
+
+.gifs-slider {
+    background-color: $purple;
+    height: rem(187px);
+    margin: 0 10%; //No es la medida real
 }
