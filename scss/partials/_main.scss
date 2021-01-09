@@ -19,6 +19,7 @@ h1 {
     color: $purple;
     text-align: center;
     line-height: 33px;
+    padding: 0 12%;
 }
 
 .aqua-title {
@@ -38,7 +39,16 @@ h1 {
 
 input[type="text"] {
     border: none;
+    margin-left: 14.7%;
 }
+
+input::placeholder {
+        font-family: $fontR;
+        font-size: rem(16px);
+        font-weight: $regularR;
+        color: #6B7989;
+        text-align: left;
+    }
 
 .input-container {
     background: #FFFFFF;
@@ -47,6 +57,14 @@ input[type="text"] {
     width: 89.1%;
     height: 4.2%;
     margin: 0 auto;
+    padding: 13.8px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.input-container img {
+    margin-right: rem(20px);
 }
 
 #section-1 h3 {
