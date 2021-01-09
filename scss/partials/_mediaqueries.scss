@@ -1,8 +1,35 @@
 @media screen and (min-width: 960px) {
 
+    .superior-line {
+        margin-bottom: 0;
+    }
+
     // Header
     
     .menu nav ul {
         display: flex;
+        align-items: center;
+        background-color: transparent;
     }
+
+    .logo-container {
+        margin-left: 10.8%;
+        margin-top: 1.5%;
+    }
+
+    .menu nav ul li {
+        font-family: $fontM;
+        font-size: rem(13px);
+        font-weight: $boldM;
+        color: $purple;
+        line-height: rem(16px);
+        border-bottom: none;
+        text-transform: uppercase;
+        padding: 0 25px;
+    }
+
+    .menu {
+        margin-right: 10.8%;
+    }
+
 }
