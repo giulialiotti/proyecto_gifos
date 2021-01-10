@@ -55,6 +55,22 @@
         margin-left: rem(54px);
     }
 
+    // Section 2 
+
+    .button-slider {
+        display: flex;
+        justify-content: space-between;
+        margin: 11.3% 6.4% 0;
+    }
+
+    .gifs-slider {
+        margin: 0 10.8%;
+        height: rem(275px);
+        position: relative;
+        z-index: 9;
+        top: rem(-150px);
+    }
+
     // Footer
 
     footer {
