@@ -1,7 +1,7 @@
-// Función para convertir px a rem
+// ---- ---- ---- ---- ---- Función para convertir px a rem ---- ---- ---- ---- ----
 
 @function rem($size) {
     @return $size / 16px * 1rem;
   }
 
-// Mixins
+// ---- ---- ---- ---- ---- Mixins ---- ---- ---- ---- ----
