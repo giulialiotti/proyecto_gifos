@@ -17,13 +17,12 @@
         margin-top: 1.5%;
     }
 
-    .menu nav ul li {
+    .textMenu {
         font-size: rem(13px);
         color: $purple;
         line-height: rem(16px);
         border-bottom: none;
         text-transform: uppercase;
-        padding: 0 25px;
 
         &:hover {
             &::after {
@@ -43,6 +42,10 @@
 
     .menu {
         margin-right: 10.8%;
+
+        nav ul li {
+            padding: 0 25px;
+        }
     }
 
     .plus-button {
