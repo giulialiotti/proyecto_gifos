@@ -2,11 +2,7 @@ header .flex-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.logo-container {
-    margin-left: 5.9%;
-    margin-top: 2.8%;
+    padding: 19px 22px 24px;
 }
 
 .textMenu {
@@ -23,8 +19,27 @@ header .flex-container {
 
 .menu nav ul {
     background: rgba(87,46,229,0.90);
+    display: none;
+    width: 100%;
+}
+
+#navUl.show {
+    display: flex;
+    flex-direction: column;
 }
 
 .plus-button {
     display: none;
+}
+
+// ---- ---- ---- ---- ---- HAMBURGER MENU ---- ---- ---- ---- ----
+
+.hamburger {
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+
+    &:focus {
+        outline: none;
+    }
 }

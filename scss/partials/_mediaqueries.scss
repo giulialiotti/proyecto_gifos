@@ -53,6 +53,14 @@
 
     .plus-button {
         display: block;
+
+        // &:hover {
+        //     filter: url("assets/CTA-crear-gifo-hover.svg");
+        // }
+    }
+
+    #hamburger {
+        display: none;
     }
 
     // ---- ---- ---- ---- ---- SECTION 1 ---- ---- ---- ---- ----
