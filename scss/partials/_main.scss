@@ -120,12 +120,31 @@ input::placeholder {
     margin-bottom: rem(32px);
 }
 
-.gifs-slider {
-    background-color: $purple;
-    height: rem(187px);
-    margin: 0 10%; //No es la medida real
-}
+// .gifs-slider {
+//     background-color: $purple;
+//     height: rem(187px);
+//     margin: 0 10%; //No es la medida real
+// }
 
 .button-slider {
     display: none;
+}
+
+.gifs-slider {
+    display: flex;
+    justify-content: flex-start;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    margin-left: 22px;
+}
+
+.gif-images {
+    width: 100%;
+    margin-right: rem(22px);
+
+    img {
+        width: rem(243px);
+        height: rem(187px);
+        object-fit: cover;
+    }
 }
