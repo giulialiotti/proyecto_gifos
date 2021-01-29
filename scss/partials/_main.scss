@@ -163,13 +163,39 @@ input::placeholder {
 }
 
 .favorites-gifs {
-    display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
+    width: 46%;
 
     img {
-        width: rem(156px);
-        height: rem(120px);
+        width: 100%;
         object-fit: cover;
+    }
+}
+
+.favorites-gifs-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 0 21px;
+}
+
+.button-favorites {
+    border: 1px solid #572EE5;
+    border-radius: 25px;
+    width: rem(127px);
+    height: rem(50px);
+    display: flex;
+    justify-content: center;
+    margin: 58px auto 78px;
+
+    button {
+        font-family: $fontM;
+        font-weight: $boldM;
+        font-size: rem(13px);
+        color: $purple;
+        letter-spacing: 0;
+        text-align: center;
+        border: none;
+        background: transparent;
     }
 }
