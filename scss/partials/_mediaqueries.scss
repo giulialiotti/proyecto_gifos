@@ -105,6 +105,22 @@
         top: rem(-150px);
     }
 
+    // ---- ---- ---- ---- ---- FAVORITES SECTION ---- ---- ---- ---- ----
+
+    #favoritesSection h2 {
+        font-size: rem(25px);
+        margin-bottom: rem(36px);
+        margin-top: rem(8px);
+    }
+
+    .favorites-gifs-container {
+        margin: 0 10.8%;
+    }
+
+    .favorites-gifs {
+        width: 23%;
+    }
+
     // ---- ---- ---- ---- ---- FOOTER ---- ---- ---- ---- ----
 
     footer {
