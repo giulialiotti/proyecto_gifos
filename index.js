@@ -8,3 +8,29 @@ hamburger.addEventListener('click', () => {
     navUl.classList.toggle('show');
 });
 
+// ---- ---- ---- ---- ---- TRENDING FETCH API KEY ---- ---- ---- ---- ----
+
+function endPointTrendingGifs() {
+    fetch('https://api.giphy.com/v1/gifs/trending?api_key=gUd0zCdNEkv06vVTL5GpSGw4arqlSool')
+    .then(response => response.json())
+    .then(json => {
+        console.log(json.data);
+    })
+    .catch(error => console.error(error));
+}
+
+endPointTrendingGifs();
+
+let searchInput = document.getElementById('searchInput').value;
+
+function searchResults() {
+    fetch('https://api.giphy.com/v1/tags/related/?api_key=gUd0zCdNEkv06vVTL5GpSGw4arqlSool')
+    .then(response => response.json())
+    .then(json => {
+        console.log(json);
+        
+    })
+    .catch(error => console.error(error));
+}
+
+// images.original.url 
