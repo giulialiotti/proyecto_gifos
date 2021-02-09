@@ -58,11 +58,20 @@
 
     .plus-button {
         display: block;
+        background-image: url('../assets/button-crear-gifo.svg');
+        background-repeat: no-repeat;
+        width: rem(54px);
+        height: rem(54px);
+        margin-left: rem(25px);
 
-        // &:hover {
-        //     filter: url("assets/CTA-crear-gifo-hover.svg");
-        // }
+        &:hover {
+            background-image: url("../assets/CTA-crear-gifo-hover.svg");
+        }
     }
+    
+    .plus-button::marker {
+            content: '';
+        }
 
     #hamburger {
         display: none;
