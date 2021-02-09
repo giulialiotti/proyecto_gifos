@@ -2,10 +2,10 @@
 
 const hamburger = document.getElementById('hamburger');
 const navUl = document.getElementById('navUl');
-const closeHamburger = document.getElementById('closeHamburger');
 
 hamburger.addEventListener('click', () => {
-    navUl.classList.toggle('show');
+    hamburger.classList.toggle('active');
+    navUl.classList.toggle('active');
 });
 
 // ---- ---- ---- ---- ---- TRENDING FETCH API KEY ---- ---- ---- ---- ----

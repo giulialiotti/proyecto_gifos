@@ -22,16 +22,7 @@ header .flex-container {
     }
 }
 
-.menu nav ul {
-    background: rgba(87,46,229,0.90);
-    display: none;
-    width: 100%;
-}
 
-#navUl.show {
-    display: flex;
-    flex-direction: column;
-}
 
 .plus-button {
     display: none;
@@ -41,12 +32,34 @@ header .flex-container {
 
 // ---- ---- ---- ---- ---- HAMBURGER MENU ---- ---- ---- ---- ----
 
-.hamburger {
-    border: 0;
-    background: transparent;
-    cursor: pointer;
+.menu nav ul {  
+    display: none;
+}
 
-    &:focus {
-        outline: none;
-    }
+#navUl.active {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 95px;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(87,46,229,0.90);
+}
+
+#hamburger {
+    position: relative;
+    background-image: url('../assets/burger.svg');
+    width: rem(15px);
+    height: rem(15px);
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+
+#hamburger.active {
+    background-image: url('../assets/close.svg');
+    background-repeat: no-repeat;
+    background-position: center;
 }
