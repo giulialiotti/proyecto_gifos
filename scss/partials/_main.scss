@@ -188,6 +188,10 @@ input::placeholder {
     justify-content: center;
     margin: 58px auto 78px;
 
+    &:hover {
+        background-color: $purple;
+    }
+
     button {
         font-family: $fontM;
         font-weight: $boldM;
@@ -197,5 +201,9 @@ input::placeholder {
         text-align: center;
         border: none;
         background: transparent;
+
+        &:hover {
+            color: white;
+        }
     }
 }

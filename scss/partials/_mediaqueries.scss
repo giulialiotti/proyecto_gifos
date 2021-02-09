@@ -67,6 +67,10 @@
         &:hover {
             background-image: url("../assets/CTA-crear-gifo-hover.svg");
         }
+
+        &:active {
+            background-image: url("../assets/CTA-crear-gifo-active.svg");
+        }
     }
     
     .plus-button::marker {
@@ -104,6 +108,28 @@
         display: flex;
         justify-content: space-between;
         margin: 11.3% 6.4% 0;
+    }
+
+    .btn-left {
+        background-image: url('../assets/button-slider-left.svg');
+
+        &:hover {
+            background-image: url('../assets/button-slider-left-hover.svg');
+        }
+    }
+
+    .btn-right {
+        background-image: url('../assets/Button-Slider-right.svg');
+
+        &:hover {
+            background-image: url('../assets/button-slider-right-hover.svg');
+        }
+    }
+
+    .btn-left, .btn-right {
+        width: rem(40px);
+        height: rem(40px);
+        background-repeat: no-repeat;
     }
 
     .gifs-slider {
