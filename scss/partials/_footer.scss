@@ -16,7 +16,7 @@
 .social-media ul {
     display: flex;
     justify-content: space-between;
-    padding: 0 37%; 
+    padding: 0 35%; 
 }
 
 .social-media ul li {
@@ -32,4 +32,31 @@ footer .copy-text {
     line-height: 20px;
     text-align: center;
     margin-bottom: rem(24px);
+}
+
+.facebook-icon {
+    background-image: url('../assets/icon_facebook.svg');
+    @extend %social-media-icons;
+
+    &:hover {
+        background-image: url('../assets/icon_facebook_hover.svg');
+    }
+}
+
+.twitter-icon {
+    background-image: url('../assets/icon-twitter.svg');
+    @extend %social-media-icons;
+
+    &:hover {
+        background-image: url('../assets/icon-twitter-hover.svg');
+    }
+}
+
+.instagram-icon {
+    background-image: url('../assets/icon_instagram.svg');
+    @extend %social-media-icons;
+
+    &:hover {
+        background-image: url('../assets/icon_instagram-hover.svg');
+    }
 }
