@@ -8,6 +8,16 @@ hamburger.addEventListener('click', () => {
     navUl.classList.toggle('active');
 });
 
+// ---- ---- ---- ---- ---- DARK MODE ---- ---- ---- ---- ----
+
+const darkMode = document.getElementById('darkMode');
+
+darkMode.addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+    // darkMode.classList.toggle('active'); y asi cambiar el texto a modo diurno
+})
+
+
 // ---- ---- ---- ---- ---- TRENDING FETCH API KEY ---- ---- ---- ---- ----
 
 function endPointTrendingGifs() {

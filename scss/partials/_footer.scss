@@ -6,6 +6,10 @@
     letter-spacing: 0;
     text-align: center;
     margin-top: rem(47px);
+
+    body.dark & {
+        color: $white;
+    }
 }
 
 .social-media {
@@ -32,6 +36,10 @@ footer .copy-text {
     line-height: 20px;
     text-align: center;
     margin-bottom: rem(24px);
+
+    body.dark & {
+        color: $white;
+    }
 }
 
 .facebook-icon {

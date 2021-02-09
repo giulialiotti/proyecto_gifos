@@ -21,6 +21,10 @@ h1 {
     line-height: 33px;
     padding: 0 12%;
     margin-top: 0;
+
+    body.dark & {
+        color: $white;
+    }
 }
 
 .aqua-title {
@@ -30,7 +34,7 @@ h1 {
 .home-ilustration {
     width: 72.8%;
     height: 10.8%;
-    margin: 0 auto;
+    margin: 31px auto -4px;
 }
 
 .home-ilustration img {
@@ -42,6 +46,10 @@ input[type="text"] {
     border: none;
     margin-left: 14.7%;
     width: 70%;
+
+    body.dark & {
+        background: $dark;
+    }
 }
 
 input::placeholder {
@@ -63,6 +71,10 @@ input::placeholder {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    body.dark & {
+        background: $dark;
+    }
 }
 
 .input-container img {
@@ -78,6 +90,10 @@ input::placeholder {
     line-height: rem(25px);
     margin-top: rem(31px);
     margin-bottom: rem(2px);
+
+    body.dark & {
+        color: $white;
+    }
 }
 
 #section-1 p {
@@ -90,13 +106,25 @@ input::placeholder {
     padding: 0 20%;
     margin-top: 0;
     margin-bottom: rem(45px);
+
+    body.dark & {
+        color: $white;
+    }
 }
 
 // ---- ---- ---- ---- ---- SECTION 2 ---- ---- ---- ---- ----
 
 #section-2 {
-    background: #F3F5F8;
+    background-color: #F3F5F8;
     padding-bottom: rem(86px);
+
+    body.dark & {
+        background-color: $darker;
+
+        h2, p {
+            color: $white;
+        }
+    }
 }
 
 #section-2 h2 {

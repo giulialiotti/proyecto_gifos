@@ -56,6 +56,10 @@ header .flex-container {
     background-repeat: no-repeat;
     background-position: center;
     cursor: pointer;
+
+    // body.dark & {
+    //     background-image: url('../assets/burger-modo-noc.svg');
+    // }
 }
 
 #hamburger.active {
