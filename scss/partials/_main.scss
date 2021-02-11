@@ -4,6 +4,10 @@
     display: block;
     background-color: $purple;
     height: 5px;
+
+    body.dark & {
+        background: $black;
+    }
 }
 
 .superior-line {
@@ -34,7 +38,9 @@ h1 {
 .home-ilustration {
     width: 72.8%;
     height: 10.8%;
-    margin: 31px auto -4px;
+    margin: 31px auto 0;
+    display: flex;
+    justify-content: center;
 }
 
 .home-ilustration img {

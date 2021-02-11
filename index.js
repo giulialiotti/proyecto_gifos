@@ -14,9 +14,16 @@ const darkMode = document.getElementById('darkMode');
 
 darkMode.addEventListener('click', () => {
     document.body.classList.toggle('dark');
-    // darkMode.classList.toggle('active'); y asi cambiar el texto a modo diurno
-})
+    changeText();
+});
 
+function changeText() {
+    if (darkMode.innerHTML === "Modo Nocturno") {
+        darkMode.innerHTML = "Modo Diurno";
+    } else {
+        darkMode.innerHTML = "Modo Nocturno";
+    }
+}
 
 // ---- ---- ---- ---- ---- TRENDING FETCH API KEY ---- ---- ---- ---- ----
 
