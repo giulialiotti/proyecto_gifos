@@ -83,8 +83,14 @@ input::placeholder {
     }
 }
 
-.input-container img {
-    margin-right: rem(20px);
+.btn-search {
+    background-image: url(../assets/icon-search.svg);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    width: rem(20px);
+    height: rem(20px);
+    margin-right: 1.25rem;
+    border: 0;
 }
 
 #section-1 h3 {
