@@ -42,23 +42,11 @@ endPointTrendingGifs();
 
 // ---- ---- ---- ---- ---- SEARCH GIFOS ---- ---- ---- ---- ----
 
-// let searchInput = document.getElementById('searchInput').value;
-
-// function searchResults() {
-//     fetch('https://api.giphy.com/v1/tags/related/?api_key=gUd0zCdNEkv06vVTL5GpSGw4arqlSool')
-//     .then(response => response.json())
-//     .then(json => {
-//         console.log(json);
-        
-//     })
-//     .catch(error => console.error(error));
-// }
-
 document.addEventListener("DOMContentLoaded", searchResults);
       function searchResults() {
         document.getElementById("btnSearch").addEventListener("click", ev => {
           ev.preventDefault(); //to stop the page reload
-          let url = `https://api.giphy.com/v1/gifs/search?api_key=${APIKEY}&limit=1&q=`;
+          let url = `https://api.giphy.com/v1/gifs/search?api_key=${APIKEY}&limit=12&offset=0&q=`;
           let str = document.getElementById("searchInput").value.trim();
           url = url.concat(str);
           console.log(url);
@@ -68,13 +56,16 @@ document.addEventListener("DOMContentLoaded", searchResults);
               //  data, pagination, meta
               console.log(content.data);
               console.log("META", content.meta);
-              let div = document.createElement("div");
-              let img = document.createElement("img");
-              img.src = content.data[0].images.original.url;
-              img.alt = content.data[0].title;
-              div.appendChild(img);
-              let searchResultsGifs = document.getElementById("searchResultsGifs");
-              searchResultsGifs.appendChild(div);
+              let gifs = content.data;
+              for (let i = 0; i < gifs.length; i++) {
+                let div = document.createElement("div");
+                let img = document.createElement("img");
+                img.src = gifs[i].images.original.url;
+                img.alt = gifs[i].title;
+                div.appendChild(img);
+                let searchResultsGifs = document.getElementById("searchResultsGifs");
+                searchResultsGifs.appendChild(div);
+              }
               document.querySelector("#searchInput").value = "";
             })
             .catch(err => {
@@ -83,4 +74,3 @@ document.addEventListener("DOMContentLoaded", searchResults);
         });
       }
 
-// images.original.url -> url del gif

@@ -61,13 +61,17 @@ header .flex-container {
     background-position: center;
     cursor: pointer;
 
-    // body.dark & {
-    //     background-image: url('../assets/burger-modo-noc.svg');
-    // }
+    body.dark & {
+        background-image: url('../assets/burger-modo-noct.svg');
+    }
 }
 
 #hamburger.active {
     background-image: url('../assets/close.svg');
     background-repeat: no-repeat;
     background-position: center;
+
+    body.dark & {
+            background-image: url('../assets/close-modo-noct.svg');
+        }
 }
