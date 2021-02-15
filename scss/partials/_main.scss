@@ -1,4 +1,4 @@
-// ---- ---- ---- ---- ---- PURPLE LINES ---- ---- ---- ---- ----
+// ---- ---- ---- ---- ---- PURPLE LINES TOP AND BOTTOM ---- ---- ---- ---- ----
 
 .superior-line, .inferior-line {
     display: block;
@@ -14,7 +14,7 @@
     margin-bottom: 2.4%;
 }
 
-// ---- ---- ---- ---- ---- SECTION 1 ---- ---- ---- ---- ----
+// ---- ---- ---- ---- ---- SEARCH BAR SECTION ---- ---- ---- ---- ----
 
 h1 {
     font-family: $fontM;
@@ -41,17 +41,18 @@ h1 {
     margin: 31px auto 0;
     display: flex;
     justify-content: center;
-}
 
-.home-ilustration img {
-    max-width: 100%;
-    max-height: 100%;
+    img {
+        max-width: 100%;
+        max-height: 100%;
+    }
 }
 
 input[type="text"] {
     border: none;
     margin-left: 14.7%;
     width: 70%;
+    outline: none;
 
     body.dark & {
         background: $dark;
@@ -92,48 +93,69 @@ input::placeholder {
     height: rem(20px);
     margin-right: 1.25rem;
     border: 0;
+    outline: none;
 
     body.dark & {
         background-image: url('../assets/icon-search-modo-noct.svg');
     }
 }
 
-#section-1 h3 {
-    font-family: $fontM;
-    font-size: rem(16px);
-    font-weight: $boldM;
-    color: $purple;
-    text-align: center;
-    line-height: rem(25px);
-    margin-top: rem(31px);
-    margin-bottom: rem(2px);
+#searchBarSection {
+    h3 {
+        font-family: $fontM;
+        font-size: rem(16px);
+        font-weight: $boldM;
+        color: $purple;
+        text-align: center;
+        line-height: rem(25px);
+        margin-top: rem(31px);
+        margin-bottom: rem(2px);
+    }
+
+    P {
+        font-family: $fontM;
+        font-size: rem(14px);
+        font-weight: $mediumM;
+        color: $purple;
+        text-align: center;
+        line-height: rem(25px);
+        padding: 0 20%;
+        margin-top: 0;
+        margin-bottom: rem(45px);
+    }
 
     body.dark & {
-        color: $white;
+        h3, p {
+            color: $white;
+        }
     }
 }
 
-#section-1 p {
-    font-family: $fontM;
-    font-size: rem(14px);
-    font-weight: $mediumM;
-    color: $purple;
-    text-align: center;
-    line-height: rem(25px);
-    padding: 0 20%;
-    margin-top: 0;
-    margin-bottom: rem(45px);
+// ---- ---- ---- ---- ---- TRENDING SECTION ---- ---- ---- ---- ----
 
-    body.dark & {
-        color: $white;
-    }
-}
-
-// ---- ---- ---- ---- ---- SECTION 2 ---- ---- ---- ---- ----
-
-#section-2 {
+#trendingSection {
     background-color: #F3F5F8;
     padding-bottom: rem(86px);
+
+    h2 {
+        font-family: $fontM;
+        font-size: rem(20px);
+        font-weight: $boldM;
+        color: $purple;
+        text-align: center;
+        line-height: rem(30px);
+        padding-top: rem(46px);
+    }
+
+    p {
+        font-family: $fontR;
+        font-size: rem(16px);
+        font-weight: $regularR;
+        color: $black;
+        text-align: center;
+        line-height: rem(23px);
+        padding: 7px 5.6% 32px;
+    }
 
     body.dark & {
         background-color: $darker;
@@ -142,26 +164,6 @@ input::placeholder {
             color: $white;
         }
     }
-}
-
-#section-2 h2 {
-    font-family: $fontM;
-    font-size: rem(20px);
-    font-weight: $boldM;
-    color: $purple;
-    text-align: center;
-    line-height: rem(30px);
-    padding-top: rem(46px);
-}
-
-#section-2 p {
-    font-family: $fontR;
-    font-size: rem(16px);
-    font-weight: $regularR;
-    color: $black;
-    text-align: center;
-    line-height: rem(23px);
-    padding: 7px 5.6% 32px;
 }
 
 .button-slider {

@@ -40,7 +40,7 @@ function endPointTrendingGifs() {
 
 endPointTrendingGifs();
 
-// ---- ---- ---- ---- ---- SEARCH GIFOS ---- ---- ---- ---- ----
+// ---- ---- ---- ---- ---- SEARCH GIFOS RESULTS ---- ---- ---- ---- ----
 
 document.addEventListener("DOMContentLoaded", searchResults);
       function searchResults() {
@@ -73,4 +73,7 @@ document.addEventListener("DOMContentLoaded", searchResults);
             });
         });
       }
+
+// ---- ---- ---- ---- ---- SEARCH GIFOS SUGGESTIONS LIST ---- ---- ---- ---- ----
+
 

@@ -15,16 +15,16 @@
 .social-media {
     margin-top: rem(24px);
     margin-bottom: rem(47.8px);
-}
 
-.social-media ul {
-    display: flex;
-    justify-content: space-between;
-    padding: 8% 35% 0; 
-}
+    ul {
+        display: flex;
+        justify-content: space-between;
+        padding: 8% 35% 0;
 
-.social-media ul li {
-    list-style: none;
+        li {
+            list-style: none;
+        }
+    }
 }
 
 footer .copy-text {
