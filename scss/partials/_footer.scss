@@ -45,26 +45,41 @@ footer .copy-text {
 .facebook-icon {
     background-image: url('../assets/icon_facebook.svg');
     @extend %social-media-icons;
-
     &:hover {
         background-image: url('../assets/icon_facebook_hover.svg');
+    }
+
+    body.dark & {
+        &:hover {
+            background-image: url('../assets/icon_facebook_noc.svg');
+        }
     }
 }
 
 .twitter-icon {
     background-image: url('../assets/icon-twitter.svg');
     @extend %social-media-icons;
-
     &:hover {
         background-image: url('../assets/icon-twitter-hover.svg');
+    }
+
+    body.dark & {
+        &:hover {
+            background-image: url('../assets/icon_twitter_noc.svg');
+        }
     }
 }
 
 .instagram-icon {
     background-image: url('../assets/icon_instagram.svg');
     @extend %social-media-icons;
-
     &:hover {
         background-image: url('../assets/icon_instagram-hover.svg');
+    }
+
+    body.dark & {
+        &:hover {
+            background-image: url('../assets/icon_instagram_noc.svg');
+        }
     }
 }

@@ -51,6 +51,9 @@
 
         body.dark & {
             color: $white;
+            &:active {
+                color: $gray;
+            }
         }
     }
 
@@ -83,6 +86,9 @@
 
         body.dark & {
             color: $white;
+            &:active {
+                color: $gray;
+            }
         }
     }
 
@@ -105,9 +111,18 @@
         &:hover {
             background-image: url("../assets/CTA-crear-gifo-hover.svg");
         }
-
         &:active {
             background-image: url("../assets/CTA-crear-gifo-active.svg");
+        }
+
+        body.dark & {
+            background-image: url('../assets/CTA-crear-gifo-modo-noc.svg');
+            &:hover {
+                background-image: url("../assets/CTA-crear-gifo-hover-modo-noc.svg");
+            }
+            &:active {
+                background-image: url("../assets/CTA-crear-gifo-active-modo-noc.svg");
+            }
         }
     }
     
@@ -150,17 +165,29 @@
 
     .btn-left {
         background-image: url('../assets/button-slider-left.svg');
-
         &:hover {
             background-image: url('../assets/button-slider-left-hover.svg');
+        }
+
+        body.dark & {
+            background-image: url('../assets/button-slider-left-md-noct.svg');
+            &:hover {
+                background-image: url('../assets/button-slider-left-hover-modo-noct-01.svg');
+            }
         }
     }
 
     .btn-right {
         background-image: url('../assets/Button-Slider-right.svg');
-
         &:hover {
             background-image: url('../assets/button-slider-right-hover.svg');
+        }
+
+        body.dark & {
+            background-image: url('../assets/button-slider-right-md-noct.svg');
+            &:hover {
+                background-image: url('../assets/Button-Slider-right-hover-modo-noct-01.svg');
+            }
         }
     }
 

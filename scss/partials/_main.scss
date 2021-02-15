@@ -80,17 +80,22 @@ input::placeholder {
 
     body.dark & {
         background: $dark;
+        border: 1px solid $white;
     }
 }
 
 .btn-search {
-    background-image: url(../assets/icon-search.svg);
+    background-image: url('../assets/icon-search.svg');
     background-repeat: no-repeat;
     background-color: transparent;
     width: rem(20px);
     height: rem(20px);
     margin-right: 1.25rem;
     border: 0;
+
+    body.dark & {
+        background-image: url('../assets/icon-search-modo-noct.svg');
+    }
 }
 
 #section-1 h3 {
@@ -199,6 +204,10 @@ input::placeholder {
     text-align: center;
     line-height: rem(30px);
     margin-bottom: rem(46px);
+
+    body.dark & {
+        color: $white;
+    }
 }
 
 .grid-container-results {
@@ -215,17 +224,23 @@ input::placeholder {
     }
 }
 
-.button-favorites {
-    border: 1px solid #572EE5;
+.btn-see-more {
+    border: 1px solid $purple;
     border-radius: 25px;
     width: rem(127px);
     height: rem(50px);
     display: flex;
     justify-content: center;
     margin: 58px auto 78px;
-
     &:hover {
         background-color: $purple;
+    }
+
+    body.dark & {
+        border: 1px solid $white;
+        &:hover {
+            background-color: $white;
+        }
     }
 
     button {
@@ -237,9 +252,15 @@ input::placeholder {
         text-align: center;
         border: none;
         background: transparent;
-
         &:hover {
             color: white;
+        }
+
+        body.dark & {
+            color: $white;
+            &:hover {
+                color: $black;
+            }
         }
     }
 }
