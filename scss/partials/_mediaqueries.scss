@@ -12,10 +12,31 @@
         background-color: transparent;
     }
 
-    .logo-container {
+    .logo-container-mobile,
+    .logo-container-mobile-noct,
+    .logo-container-desktop-noct {
+        display: none;
+        body.dark & {
+            display: none;
+        }
+    }
+
+    .logo-container-desktop {
+        display: block;
         margin-left: 10.8%;
         margin-top: 1.5%;
+        body.dark & {
+        display: none;
+        }
     }
+    .logo-container-desktop-noct {
+        display: none;
+        margin-left: 10.8%;
+        margin-top: 1.5%;
+        body.dark & {
+        display: block;
+        }
+    }   
 
     .textMenu a {
         color: $purple;

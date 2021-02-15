@@ -5,6 +5,23 @@ header .flex-container {
     padding: 19px 22px 24px;
 }
 
+.logo-container-mobile-noct,
+.logo-container-desktop,
+.logo-container-desktop-noct {
+    display: none;
+}
+
+.logo-container-mobile {
+    body.dark & {
+    display: none;
+    }
+}
+.logo-container-mobile-noct {
+    body.dark & {
+    display: block;
+    }
+}   
+
 .textMenu {
     font-family: $fontM;
     font-size: rem(15px);
@@ -22,13 +39,9 @@ header .flex-container {
     }
 }
 
-
-
 .plus-button {
     display: none;
 }
-
-
 
 // ---- ---- ---- ---- ---- HAMBURGER MENU ---- ---- ---- ---- ----
 
