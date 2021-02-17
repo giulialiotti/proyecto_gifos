@@ -7,13 +7,7 @@
     background-position-x: center;
 }
 
-// Helper para los botones del slider en la sección Favoritos
-
-%buttons-slider {
-    width: rem(40px);
-    height: rem(40px);
-    background-repeat: no-repeat;
-}
+// Helper para el titulo de favoritos y mis gifos
 
 %h2-title {
     font-family: $fontM;

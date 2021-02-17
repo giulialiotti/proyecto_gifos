@@ -134,7 +134,7 @@
         display: none;
     }
 
-    // ---- ---- ---- ---- ---- SECTION 1 ---- ---- ---- ---- ----
+    // ---- ---- ---- ---- ---- SEARCH BAR SECTION ---- ---- ---- ---- ----
 
     h1 {
         font-size: rem(35px);
@@ -155,17 +155,33 @@
         margin-left: rem(54px);
     }
 
-    // ---- ---- ---- ---- ---- SECTION 2 ---- ---- ---- ---- ----
+    // ---- ---- ---- ---- ---- TRENDING SECTION ---- ---- ---- ---- ----
 
-    .button-slider {
+    #trendingSection {
+        padding-bottom: 0;
+
+        h2 {
+            font-size: rem(25px);
+        }
+
+        p {
+            padding: 14px 0 43px;
+        }
+    }    
+
+    .trending-results {
         display: flex;
-        justify-content: space-between;
-        margin: 11.3% 6.4% 0;
+        justify-content: center;
+        align-items: center;
+        margin: 0 6.5%;
+        padding-bottom: 6.7%;
     }
 
     .btn-left {
         background-image: url('../assets/button-slider-left.svg');
-        @extend %buttons-slider;
+        width: rem(40px);
+        height: rem(40px);
+        background-repeat: no-repeat;
         &:hover {
             background-image: url('../assets/button-slider-left-hover.svg');
         }
@@ -180,7 +196,9 @@
 
     .btn-right {
         background-image: url('../assets/Button-Slider-right.svg');
-        @extend %buttons-slider;
+        width: rem(40px);
+        height: rem(40px);
+        background-repeat: no-repeat;
         &:hover {
             background-image: url('../assets/button-slider-right-hover.svg');
         }
@@ -194,11 +212,8 @@
     }
 
     .gifs-slider {
-        margin: 0 10.8%;
-        height: rem(275px);
-        position: relative;
-        z-index: 9;
-        top: rem(-150px);
+        margin: 0 22px;
+        overflow-x: hidden;
     }
 
     // ---- ---- ---- ---- ---- FAVORITES SECTION ---- ---- ---- ---- ----
@@ -211,12 +226,25 @@
             margin-top: rem(8px);
         }
 
-        .grid-container-results {
+    }
+
+    .grid-container-results {
             display: grid;
             grid-template-columns: 1fr 1fr 1fr 1fr;
             grid-template-rows: repeat(3, rem(200px));
             grid-gap: rem(29px);
             margin: 0 10.8%;
+        }
+    // ---- ---- ---- ---- ---- MY GIFOS SECTION ---- ---- ---- ---- ----
+
+    #myGifosSection {
+        .my-gifos-icon {
+            padding-top: rem(10px);
+        }
+    
+        h2 {
+            font-size: rem(25px);
+            margin: 8px auto 36px;
         }
     }
 

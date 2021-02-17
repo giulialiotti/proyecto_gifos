@@ -194,12 +194,7 @@ input::placeholder {
 }
 
 #favoritesSection h2 {
-    font-family: $fontM;
-    font-size: rem(20px);
-    font-weight: $boldM;
-    color: $purple;
-    text-align: center;
-    line-height: rem(30px);
+    @extend %h2-title;
     margin-bottom: rem(46px);
 
     body.dark & {
@@ -265,14 +260,19 @@ input::placeholder {
 
 // ---- ---- ---- ---- ---- MY GIFOS SECTION ---- ---- ---- ---- ----
 
-// #myGifosSection {
+#myGifosSection {
+    .my-gifos-icon {
+        display: flex;
+        justify-content: center;
+        padding-top: rem(5px);
+    }
 
-//     .my-gifos-icon {
-//         display: flex;
-//         justify-content: center;
-//     }
-
-//     h2 {
-//         @extend %h2-title;
-//     }
-// }
+    h2 {
+        @extend %h2-title;
+        margin: 6px auto 46px;
+        
+        body.dark & {
+            color: $white;
+        }
+    }
+}
