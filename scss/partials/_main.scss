@@ -138,12 +138,7 @@ input::placeholder {
     padding-bottom: rem(86px);
 
     h2 {
-        font-family: $fontM;
-        font-size: rem(20px);
-        font-weight: $boldM;
-        color: $purple;
-        text-align: center;
-        line-height: rem(30px);
+        @extend %h2-title;
         padding-top: rem(46px);
     }
 
@@ -254,6 +249,7 @@ input::placeholder {
         text-align: center;
         border: none;
         background: transparent;
+        outline: none;
         &:hover {
             color: white;
         }
@@ -266,3 +262,17 @@ input::placeholder {
         }
     }
 }
+
+// ---- ---- ---- ---- ---- MY GIFOS SECTION ---- ---- ---- ---- ----
+
+// #myGifosSection {
+
+//     .my-gifos-icon {
+//         display: flex;
+//         justify-content: center;
+//     }
+
+//     h2 {
+//         @extend %h2-title;
+//     }
+// }

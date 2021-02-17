@@ -1,7 +1,25 @@
+// Helper para los iconos de redes sociales en el footer
 
 %social-media-icons {
     width: rem(20px);
     height: rem(20px);
     background-repeat: no-repeat;
     background-position-x: center;
+}
+
+// Helper para los botones del slider en la sección Favoritos
+
+%buttons-slider {
+    width: rem(40px);
+    height: rem(40px);
+    background-repeat: no-repeat;
+}
+
+%h2-title {
+    font-family: $fontM;
+    font-size: rem(20px);
+    font-weight: $boldM;
+    color: $purple;
+    text-align: center;
+    line-height: rem(30px);
 }

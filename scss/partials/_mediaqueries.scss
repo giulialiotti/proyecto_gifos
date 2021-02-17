@@ -67,11 +67,11 @@
 
         &:hover {
             &::after {
-                content: ""; /* This is necessary for the pseudo element to work. */ 
-                display: block; /* This will put the pseudo element on its own line. */
-                margin: 0 auto; /* This will center the border. */
-                width: 100%; /* Change this to whatever width you want. */
-                padding-top: rem(1.5px); /* This creates some space between the element and the border. */
+                content: "";
+                display: block;
+                margin: 0 auto;
+                width: 100%;
+                padding-top: rem(1.5px);
                 border-bottom: 2px solid $aqua;
             }
         }
@@ -165,6 +165,7 @@
 
     .btn-left {
         background-image: url('../assets/button-slider-left.svg');
+        @extend %buttons-slider;
         &:hover {
             background-image: url('../assets/button-slider-left-hover.svg');
         }
@@ -179,6 +180,7 @@
 
     .btn-right {
         background-image: url('../assets/Button-Slider-right.svg');
+        @extend %buttons-slider;
         &:hover {
             background-image: url('../assets/button-slider-right-hover.svg');
         }
@@ -191,12 +193,6 @@
         }
     }
 
-    .btn-left, .btn-right {
-        width: rem(40px);
-        height: rem(40px);
-        background-repeat: no-repeat;
-    }
-
     .gifs-slider {
         margin: 0 10.8%;
         height: rem(275px);
@@ -207,20 +203,22 @@
 
     // ---- ---- ---- ---- ---- FAVORITES SECTION ---- ---- ---- ---- ----
 
-    #favoritesSection h2 {
-        font-size: rem(25px);
-        margin-bottom: rem(36px);
-        margin-top: rem(8px);
-    }
+    #favoritesSection {
 
-    .grid-container-results {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-template-rows: repeat(3, rem(200px));
-        grid-gap: rem(29px);
-        margin: 0 10.8%;
-    }
+        h2 {
+            font-size: rem(25px);
+            margin-bottom: rem(36px);
+            margin-top: rem(8px);
+        }
 
+        .grid-container-results {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: repeat(3, rem(200px));
+            grid-gap: rem(29px);
+            margin: 0 10.8%;
+        }
+    }
 
     // ---- ---- ---- ---- ---- FOOTER ---- ---- ---- ---- ----
 
@@ -228,29 +226,28 @@
         display: flex;
         justify-content: space-between;
         padding: 49.5px 0;
-    }
+    
+        .social-media {
+            display: flex;
+            margin: 0 0 0 10.8%;
+        
+            .share-text {
+                margin: 0;
+            }
 
-    .social-media {
-        display: flex;
-        margin: 0 0 0 10.8%;
-    }
+            ul {
+            padding: 0;
+            margin: 0;
 
-    .share-text {
-        margin: 0;
-    }
+                li {
+                    margin-left: rem(17px);
+                }
+            }
+        }
 
-    .social-media ul {
-        padding: 0;
-        margin: 0;
-
-        li {
-            margin-left: rem(17px);
+        .copy-text {
+            margin: 0 11% 0 0;
         }
     }
-
-    .copy-text {
-        margin: 0 11% 0 0;
-    }
-
 
 }
