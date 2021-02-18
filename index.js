@@ -159,55 +159,57 @@ document.addEventListener("DOMContentLoaded", searchResults);
 //   </li>`
 // );
 
-const searchInput = document.getElementById('searchInput');
-const inputContainer = document.querySelector('.input-container');
-const suggestionsList = document.getElementById('suggestionsList');
+//---------------------------------------------------------------------------------------------------------------
 
-let searchValue = searchInput.setSelectionRange(0, searchInput.value.length);
+// const searchInput = document.getElementById('searchInput');
+// const inputContainer = document.querySelector('.input-container');
+// const suggestionsList = document.getElementById('suggestionsList');
 
-// const searchSuggestions = fetch(`https://api.giphy.com/v1/tags/related/${searchValue}?api_key=${APIKEY}`)
-// .then(respuesta => console.log(respuesta.json()))
-// .catch(error => console.log(error));
+// let searchValue = searchInput.setSelectionRange(0, searchInput.value.length);
 
-async function searchSuggestions() {
-  try {
-    let respuesta = await fetch(`https://api.giphy.com/v1/tags/related/${searchValue}?api_key=${APIKEY}`);
-    let suggestions = await respuesta.json();
-    return console.log(suggestions.data);
-  } catch (error) {
-    throw (error)
-  } 
-}
+// // const searchSuggestions = fetch(`https://api.giphy.com/v1/tags/related/${searchValue}?api_key=${APIKEY}`)
+// // .then(respuesta => console.log(respuesta.json()))
+// // .catch(error => console.log(error));
 
-// searchSuggestions()
-//     .then(resultado => console.log(resultado))
-//     .catch(error => console.log("error", error));
+// async function searchSuggestions() {
+//   try {
+//     let respuesta = await fetch(`https://api.giphy.com/v1/tags/related/${searchValue}?api_key=${APIKEY}`);
+//     let suggestions = await respuesta.json();
+//     return console.log(suggestions.data);
+//   } catch (error) {
+//     throw (error)
+//   } 
+// }
 
-searchInput.addEventListener('keyup', () => {
-  //console.log(e.target.value);
+// // searchSuggestions()
+// //     .then(resultado => console.log(resultado))
+// //     .catch(error => console.log("error", error));
 
-  let results = [];
-  let input = searchInput.value;
-  //console.log(input);
-  if (input.length) {
-    results = searchSuggestions().filter((item) => {
-      return item.toLowerCase().includes(input.toLowerCase());
-    });
-  }
-  renderResults(results);
-});
+// searchInput.addEventListener('keyup', () => {
+//   //console.log(e.target.value);
 
-function renderResults(results) {
-  if (!results.length) {
-    return inputContainer.classList.remove('show');
-  }
+//   let results = [];
+//   let input = searchInput.value;
+//   //console.log(input);
+//   if (input.length) {
+//     results = searchSuggestions().filter((item) => {
+//       return item.toLowerCase().includes(input.toLowerCase());
+//     });
+//   }
+//   renderResults(results);
+// });
 
-  const content = results
-    .map((item) => {
-      return `<li>${item}</li>`;
-    })
-    .join('');
+// function renderResults(results) {
+//   if (!results.length) {
+//     return inputContainer.classList.remove('show');
+//   }
 
-    inputContainer.classList.add('show');
-    suggestionsList.innerHTML = `<ul>${content}</ul>`;
-}
+//   const content = results
+//     .map((item) => {
+//       return `<li>${item}</li>`;
+//     })
+//     .join('');
+
+//     inputContainer.classList.add('show');
+//     suggestionsList.innerHTML = `<ul>${content}</ul>`;
+// }

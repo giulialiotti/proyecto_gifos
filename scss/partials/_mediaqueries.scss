@@ -279,3 +279,37 @@
     }
 
 }
+
+// ---- ---- ---- ---- ---- CREATE GIF SECTION ---- ---- ---- ---- ----
+
+#createGifSection {
+    .square {
+        h2 {
+            font-family: $fontM;
+            font-weight: $boldM;
+            font-size: rem(25px);
+            color: $purple;
+            text-align: center;
+            line-height: rem(35px);
+        }
+        p {
+            font-family: $fontR;
+            font-size: rem(16px);
+            font-weight: $regularR;
+            color: $black;
+            text-align: center;
+            line-height: rem(29px);
+        }
+    }
+    
+}
+
+.square {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid $purple;
+    width: rem(688px);
+    height: rem(390px);
+    margin: 0 auto;
+}
