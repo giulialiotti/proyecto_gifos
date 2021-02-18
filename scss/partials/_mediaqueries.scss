@@ -57,7 +57,7 @@
         }
     }
 
-    #navUl li {
+    #navUl .textMenu {
         font-size: rem(13px);
         color: $purple;
         line-height: rem(16px);
@@ -106,7 +106,7 @@
         background-repeat: no-repeat;
         width: rem(54px);
         height: rem(54px);
-        margin-left: rem(25px);
+        //margin-left: rem(25px);
 
         &:hover {
             background-image: url("../assets/CTA-crear-gifo-hover.svg");
@@ -126,9 +126,9 @@
         }
     }
     
-    .plus-button::marker {
-            content: '';
-        }
+    .hide-marker::marker {
+        content: '';
+    }
 
     #hamburger {
         display: none;
