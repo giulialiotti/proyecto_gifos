@@ -32,19 +32,46 @@ function changeText() {
 }
 
 // ---- ---- ---- ---- ----  ---- ---- ---- ---- ---- ---- ---- ---- ---- -
-// ---- ---- ---- ---- ---- TRENDING FETCH API KEY ---- ---- ---- ---- ----
+// ---- ---- ---- ---- ---- TRENDING TEXT ---- ---- ---- ---- ----
 // ---- ---- ---- ---- ----  ---- ---- ---- ---- ---- ---- ---- ---- ---- -
 
-function endPointTrendingGifs() {
-    fetch('https://api.giphy.com/v1/gifs/trending?api_key=gUd0zCdNEkv06vVTL5GpSGw4arqlSool')
+
+
+function endPointTrendingGifsText() {
+    fetch(`https://api.giphy.com/v1/trending/searches?api_key=${APIKEY}`)
     .then(response => response.json())
     .then(json => {
-        console.log(json.data);
+        //console.log(json.data);
+        trendingGifsText = json.data;
+        console.log(trendingGifsText);
+        
+        for (let i = 0; i < 5; i++) {
+          console.log(trendingGifsText[i]);
+          function changeTrendingText() {
+            let trendingText = document.getElementById('trendingText');
+            trendingText.innerHTML = trendingGifsText[0] + ", " + trendingGifsText[1] + ", " + trendingGifsText[2] + ", " + trendingGifsText[3] + ", " + trendingGifsText[4];
+          };
+        };
+  
+        changeTrendingText();
     })
     .catch(error => console.error(error));
 }
 
-endPointTrendingGifs();
+endPointTrendingGifsText();
+
+// ---- ---- ---- ---- ----  ---- ---- ---- ---- ---- ---- ---- ---- ---- 
+// ---- ---- ---- ---- ---- SHOW TRENDING GIFS ---- ---- ---- ---- ----
+// ---- ---- ---- ---- ----  ---- ---- ---- ---- ---- ---- ---- ---- ----
+
+function endPointTrendingGifs() {
+  fetch('https://api.giphy.com/v1/gifs/trending?api_key=gUd0zCdNEkv06vVTL5GpSGw4arqlSool')
+  .then(response => response.json())
+  .then(json => {
+      console.log(json.data);
+  })
+  .catch(error => console.error(error));
+}
 
 // ---- ---- ---- ---- ----  ---- ---- ---- ---- ---- ---- ---- ---- ---- 
 // ---- ---- ---- ---- ---- SEARCH GIFOS RESULTS ---- ---- ---- ---- ----
@@ -54,6 +81,8 @@ document.addEventListener("DOMContentLoaded", searchResults);
       function searchResults() {
         document.getElementById("btnSearch").addEventListener("click", ev => {
           ev.preventDefault(); //to stop the page reload
+          searchResultsGifs.innerHTML = '';
+          //searchResultsGifs.style.display = "none"; Esconder la grilla cuando esta inactivo
           let url = `https://api.giphy.com/v1/gifs/search?api_key=${APIKEY}&limit=12&offset=0&q=`;
           let str = document.getElementById("searchInput").value.trim();
           url = url.concat(str);
@@ -213,3 +242,86 @@ document.addEventListener("DOMContentLoaded", searchResults);
 //     inputContainer.classList.add('show');
 //     suggestionsList.innerHTML = `<ul>${content}</ul>`;
 // }
+
+// const inputContainer = document.querySelector('.input-container');
+
+let searchInput = document.getElementById('searchInput');
+let btnSearch = document.getElementById('btnSearch');
+let inputText = searchInput.value;
+const URLSuggestions = "https://api.giphy.com/v1/tags/related/" + searchInput + "?&api_key=" + APIKEY + "&limit=4";
+
+function searchSuggestions(searchInput) {
+  fetch(URLSuggestions)
+  .then(response => response.json())
+  .then(data => data)
+  .catch(error => console.log(error));
+} 
+
+searchInput.addEventListener('keyup', () => {
+  //clearSuggestionsContainerContent();
+  // searchSuggestions(searchInput)
+  // .then(data =>
+  //   drawSuggestions(data));
+  console.log(data);
+});
+
+
+
+// searchInput.addEventListener('keyup', () => {
+//   console.log(suggestions);
+// });
+
+// function searchSuggestions(text) {
+//   fetch(URLSuggestions)
+//     .then(response => response.json())
+//     .then(content => {
+//       suggestions = content.data;
+//       console.log(suggestions);
+
+//       // let suggestionsList = document.getElementById('suggestionsList');
+//       // let suggestionsUl = document.createElement('ul');
+//       // suggestionsUl.classList.add("suggestionsUl");
+
+//       // suggestions.forEach((suggestion) => {
+//       //   drawSuggestions(suggestion);
+//       // });
+
+//       // for (let i = 0; i < suggestions.length; i++) {
+//       //   drawSuggestions(suggestions);
+//       // }
+
+//       // suggestionsList.appendChild(suggestionsUl);
+//       // suggestionsUl.appendChild(suggestionsLi);
+//     })
+//     .catch(err => {
+//       console.error(err);
+//     });
+// }
+
+// // function drawSuggestions(suggestion) {
+// //   let suggestionsLi = document.createElement('li');
+// //   suggestionsLi.classList.add("suggestionsLi");
+// // };
+
+function drawSuggestions(data) {
+  suggestionsList.innerHTML += `
+      <li class="suggestionsLi">${suggestions.name}</li>`
+};
+
+
+// Codigo fran 
+
+// function suggestions(input){
+//   return fetch ("https://api.giphy.com/v1/tags/related/" + input + "?&api_key=940D6rFjWipAwUmqdskYmMK8wMV036ID")
+//   .then(response => response.json())
+//   .then(data => data)
+//   .catch(error => console.error(error))
+// }
+
+// input.addEventListener("keyup", () =>{
+//   clearSuggestionsContainerContent();
+//   suggestions(input).then(data =>  drawSuggestions(data));
+// })
+
+//my api
+//("https://api.giphy.com/v1/tags/related/" + searchInput + "?&api_key=gUd0zCdNEkv06vVTL5GpSGw4arqlSool");
