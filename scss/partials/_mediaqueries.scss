@@ -159,6 +159,29 @@
         margin-left: rem(54px);
     }
 
+    #searchBarSection {
+        
+        h3 {
+            margin-top: rem(73px);
+        }
+
+        p {
+            margin-bottom: rem(95px);
+        }
+
+        .divider {
+            width: rem(338px);
+            margin: -10px auto 82px;
+            opacity: 0.5;
+        }
+    }
+
+    #titleSearchResult {
+        font-size: rem(35px);
+        line-height: rem(30px);
+        margin-bottom: rem(59px);
+    }
+
     // ---- ---- ---- ---- ---- TRENDING SECTION ---- ---- ---- ---- ----
 
     #trendingSection {

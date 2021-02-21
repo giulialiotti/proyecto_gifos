@@ -23,40 +23,12 @@ darkMode.addEventListener('click', () => {
     changeText();
 });
 
-function changeText() {
-    if (darkMode.innerHTML === "Modo Nocturno") {
-        darkMode.innerHTML = "Modo Diurno";
-    } else {
-        darkMode.innerHTML = "Modo Nocturno";
-    }
-}
-
 // ---- ---- ---- ---- ----  ---- ---- ---- ---- ---- ---- ---- ---- ---- -
 // ---- ---- ---- ---- ---- TRENDING TEXT ---- ---- ---- ---- ----
 // ---- ---- ---- ---- ----  ---- ---- ---- ---- ---- ---- ---- ---- ---- -
 
-
-
-function endPointTrendingGifsText() {
-    fetch(`https://api.giphy.com/v1/trending/searches?api_key=${APIKEY}`)
-    .then(response => response.json())
-    .then(json => {
-        //console.log(json.data);
-        trendingGifsText = json.data;
-        console.log(trendingGifsText);
-        
-        for (let i = 0; i < 5; i++) {
-          console.log(trendingGifsText[i]);
-          function changeTrendingText() {
-            let trendingText = document.getElementById('trendingText');
-            trendingText.innerHTML = trendingGifsText[0] + ", " + trendingGifsText[1] + ", " + trendingGifsText[2] + ", " + trendingGifsText[3] + ", " + trendingGifsText[4];
-          };
-        };
-  
-        changeTrendingText();
-    })
-    .catch(error => console.error(error));
-}
+const trendingTitle = document.getElementById('trendingTitle');
+let trendingText = document.getElementById('trendingText');
 
 endPointTrendingGifsText();
 
@@ -77,12 +49,26 @@ function endPointTrendingGifs() {
 // ---- ---- ---- ---- ---- SEARCH GIFOS RESULTS ---- ---- ---- ---- ----
 // ---- ---- ---- ---- ----  ---- ---- ---- ---- ---- ---- ---- ---- ---- 
 
+// Esconder, hr, texto trending, la grilla y el boton ver más cuando esta inactivo
+
+const btnSeeMore = document.querySelector('.btn-see-more');
+const divider = document.querySelector('.divider');
+const titleSearchResult = document.getElementById('titleSearchResult');
+
+hideSearchInactive();
+
+// Mostrar los resultados de búsqueda
 document.addEventListener("DOMContentLoaded", searchResults);
       function searchResults() {
         document.getElementById("btnSearch").addEventListener("click", ev => {
           ev.preventDefault(); //to stop the page reload
+
+          //hideTrendingText();
+
           searchResultsGifs.innerHTML = '';
-          //searchResultsGifs.style.display = "none"; Esconder la grilla cuando esta inactivo
+
+          showSearchActive();
+
           let url = `https://api.giphy.com/v1/gifs/search?api_key=${APIKEY}&limit=12&offset=0&q=`;
           let str = document.getElementById("searchInput").value.trim();
           url = url.concat(str);
@@ -94,6 +80,7 @@ document.addEventListener("DOMContentLoaded", searchResults);
               //console.log(content.data);
               //console.log("META", content.meta);
               let gifs = content.data;
+            
               for (let i = 0; i < gifs.length; i++) {
                 let div = document.createElement("div");
                 let img = document.createElement("img");
@@ -110,7 +97,7 @@ document.addEventListener("DOMContentLoaded", searchResults);
             });
         });
       }
-
+changeTitleSearchResults(); // no funciona
 // ---- ---- ---- ---- ----  ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---
 // ---- ---- ---- ---- ---- SEARCH GIFOS SUGGESTIONS LIST ---- ---- ---- ---- ----
 // ---- ---- ---- ---- ----  ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---

@@ -130,10 +130,30 @@ input::placeholder {
         margin-bottom: rem(45px);
     }
 
+    .divider {
+        width: rem(157px);
+        margin: -10px auto 43px;
+        opacity: 0.5;
+    }
+
     body.dark & {
         h3, p {
             color: $white;
         }
+    }
+}
+
+#titleSearchResult {
+    font-family: $fontM;
+    font-weight: $boldM;
+    font-size: rem(25px);
+    color: $purple;
+    text-align: center;
+    line-height: rem(40px);
+    margin-bottom: rem(38px);
+
+    body.dark & {
+        color: $white;
     }
 }
 
