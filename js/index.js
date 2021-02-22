@@ -36,14 +36,7 @@ endPointTrendingGifsText();
 // ---- ---- ---- ---- ---- SHOW TRENDING GIFS ---- ---- ---- ---- ----
 // ---- ---- ---- ---- ----  ---- ---- ---- ---- ---- ---- ---- ---- ----
 
-function endPointTrendingGifs() {
-  fetch('https://api.giphy.com/v1/gifs/trending?api_key=gUd0zCdNEkv06vVTL5GpSGw4arqlSool')
-  .then(response => response.json())
-  .then(json => {
-      console.log(json.data);
-  })
-  .catch(error => console.error(error));
-}
+endPointTrendingGifs();
 
 // ---- ---- ---- ---- ----  ---- ---- ---- ---- ---- ---- ---- ---- ---- 
 // ---- ---- ---- ---- ---- SEARCH GIFOS RESULTS ---- ---- ---- ---- ----
