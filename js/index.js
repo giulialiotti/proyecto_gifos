@@ -42,55 +42,16 @@ endPointTrendingGifs();
 // ---- ---- ---- ---- ---- SEARCH GIFOS RESULTS ---- ---- ---- ---- ----
 // ---- ---- ---- ---- ----  ---- ---- ---- ---- ---- ---- ---- ---- ---- 
 
-// Esconder, hr, texto trending, la grilla y el boton ver más cuando esta inactivo
-
 const btnSeeMore = document.querySelector('.btn-see-more');
 const divider = document.querySelector('.divider');
 const titleSearchResult = document.getElementById('titleSearchResult');
 
+// Hide, hr, trending text, grid and see more button while inactive
 hideSearchInactive();
 
-// Mostrar los resultados de búsqueda
+// Show search results
 document.addEventListener("DOMContentLoaded", searchResults);
-      function searchResults() {
-        document.getElementById("btnSearch").addEventListener("click", ev => {
-          ev.preventDefault(); //to stop the page reload
 
-          //hideTrendingText();
-
-          searchResultsGifs.innerHTML = '';
-
-          showSearchActive();
-
-          let url = `https://api.giphy.com/v1/gifs/search?api_key=${APIKEY}&limit=12&offset=0&q=`;
-          let str = document.getElementById("searchInput").value.trim();
-          url = url.concat(str);
-          //console.log(url);
-          fetch(url)
-            .then(response => response.json())
-            .then(content => {
-              // data, pagination, meta
-              //console.log(content.data);
-              //console.log("META", content.meta);
-              let gifs = content.data;
-            
-              for (let i = 0; i < gifs.length; i++) {
-                let div = document.createElement("div");
-                let img = document.createElement("img");
-                img.src = gifs[i].images.original.url;
-                img.alt = gifs[i].title;
-                div.appendChild(img);
-                let searchResultsGifs = document.getElementById("searchResultsGifs");
-                searchResultsGifs.appendChild(div);
-              }
-              document.querySelector("#searchInput").value = "";
-            })
-            .catch(err => {
-              console.error(err);
-            });
-        });
-      }
-changeTitleSearchResults(); // no funciona
 // ---- ---- ---- ---- ----  ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---
 // ---- ---- ---- ---- ---- SEARCH GIFOS SUGGESTIONS LIST ---- ---- ---- ---- ----
 // ---- ---- ---- ---- ----  ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---
@@ -225,69 +186,49 @@ changeTitleSearchResults(); // no funciona
 
 // const inputContainer = document.querySelector('.input-container');
 
-let searchInput = document.getElementById('searchInput');
-let btnSearch = document.getElementById('btnSearch');
-let inputText = searchInput.value;
+const searchInput = document.getElementById('searchInput');
+const btnSearch = document.getElementById('btnSearch');
 const URLSuggestions = "https://api.giphy.com/v1/tags/related/" + searchInput + "?&api_key=" + APIKEY + "&limit=4";
 
-function searchSuggestions(searchInput) {
+function fetchSearchSuggestions(URLSuggestions) {
   fetch(URLSuggestions)
   .then(response => response.json())
-  .then(data => data)
+  .then(json => {
+    suggestions = json.data;
+    //console.log(suggestions);
+  })
   .catch(error => console.log(error));
-} 
+}
+
+fetchSearchSuggestions(URLSuggestions);
 
 searchInput.addEventListener('keyup', () => {
-  //clearSuggestionsContainerContent();
-  // searchSuggestions(searchInput)
-  // .then(data =>
-  //   drawSuggestions(data));
-  console.log(data);
+  let inputText = searchInput.value;
+  console.log(inputText);
+  drawSuggestions(suggestions);
 });
 
-
-
-// searchInput.addEventListener('keyup', () => {
-//   console.log(suggestions);
-// });
-
-// function searchSuggestions(text) {
-//   fetch(URLSuggestions)
-//     .then(response => response.json())
-//     .then(content => {
-//       suggestions = content.data;
-//       console.log(suggestions);
-
-//       // let suggestionsList = document.getElementById('suggestionsList');
-//       // let suggestionsUl = document.createElement('ul');
-//       // suggestionsUl.classList.add("suggestionsUl");
-
-//       // suggestions.forEach((suggestion) => {
-//       //   drawSuggestions(suggestion);
-//       // });
-
-//       // for (let i = 0; i < suggestions.length; i++) {
-//       //   drawSuggestions(suggestions);
-//       // }
-
-//       // suggestionsList.appendChild(suggestionsUl);
-//       // suggestionsUl.appendChild(suggestionsLi);
-//     })
-//     .catch(err => {
-//       console.error(err);
-//     });
-// }
-
-// // function drawSuggestions(suggestion) {
-// //   let suggestionsLi = document.createElement('li');
-// //   suggestionsLi.classList.add("suggestionsLi");
-// // };
-
-function drawSuggestions(data) {
-  suggestionsList.innerHTML += `
-      <li class="suggestionsLi">${suggestions.name}</li>`
+function drawSuggestions(suggestions) {
+  for (let i = 0; i < suggestions.length; i++) {
+    suggestionsList.innerHTML += `
+    <li class="suggestionsLi">${suggestions[i].name}</li>`;
+  }
 };
 
+let suggestionsList = document.getElementById('suggestionsList');
+let suggestionsUl = document.createElement('ul');
+let suggestionsLi = document.querySelector('.suggestionsLi');
+
+suggestionsList.appendChild(suggestionsUl);
+//suggestionsUl.appendChild(suggestionsLi);
+suggestionsUl.classList.add("suggestionsUl");
+
+
+
+// function drawSuggestions(suggestion) {
+//   let suggestionsLi = document.createElement('li');
+//   suggestionsLi.classList.add("suggestionsLi");
+// };
 
 // Codigo fran 
 
@@ -303,5 +244,5 @@ function drawSuggestions(data) {
 //   suggestions(input).then(data =>  drawSuggestions(data));
 // })
 
-//my api
-//("https://api.giphy.com/v1/tags/related/" + searchInput + "?&api_key=gUd0zCdNEkv06vVTL5GpSGw4arqlSool");
+
+
