@@ -49,8 +49,11 @@ const titleSearchResult = document.getElementById('titleSearchResult');
 // Hide, hr, trending text, grid and see more button while inactive
 hideSearchInactive();
 
-// Show search results
-document.addEventListener("DOMContentLoaded", searchResults);
+// Show search results - NO FUNCIONA 
+// btnSearch.addEventListener("click", ev => {
+//   ev.preventDefault();
+//   searchResults();
+// });
 
 // ---- ---- ---- ---- ----  ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---
 // ---- ---- ---- ---- ---- SEARCH GIFOS SUGGESTIONS LIST ---- ---- ---- ---- ----
@@ -187,7 +190,7 @@ document.addEventListener("DOMContentLoaded", searchResults);
 // const inputContainer = document.querySelector('.input-container');
 
 const searchInput = document.getElementById('searchInput');
-const btnSearch = document.getElementById('btnSearch');
+const btnSearch = document.getElementById('btnSearch'); // NO CAMBIAR
 const URLSuggestions = "https://api.giphy.com/v1/tags/related/" + searchInput + "?&api_key=" + APIKEY + "&limit=4";
 
 function fetchSearchSuggestions(URLSuggestions) {
@@ -195,7 +198,7 @@ function fetchSearchSuggestions(URLSuggestions) {
   .then(response => response.json())
   .then(json => {
     suggestions = json.data;
-    //console.log(suggestions);
+    console.log(suggestions);
   })
   .catch(error => console.log(error));
 }
@@ -204,7 +207,7 @@ fetchSearchSuggestions(URLSuggestions);
 
 searchInput.addEventListener('keyup', () => {
   let inputText = searchInput.value;
-  console.log(inputText);
+  //console.log(inputText);
   drawSuggestions(suggestions);
 });
 

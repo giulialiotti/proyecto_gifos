@@ -235,10 +235,85 @@ input::placeholder {
     grid-gap: rem(21px);
     margin: 0 rem(21px);
 
-    img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    div {
+        position: relative;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gif-hover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: $purple;
+            opacity: 0.6;
+            width: 100%;
+            height: 100%;  
+        }
+    }
+}
+
+.gif-hover-icons {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: rem(10px);
+
+    .gif-hover-like-btn {
+        background-image: url('../../assets/icon-fav.svg');
+        background-repeat: no-repeat;
+        height: rem(32px);
+        width: rem(32px);
+        margin-right: rem(10px);
+        &:hover {
+            background-image: url('../../assets/icon-fav-hover.svg');
+        }
+        &:active {
+            background-image: url('../../assets/icon-fav-active.svg');
+        }
+    }
+
+    .gif-hover-save-btn {
+        background-image: url('../../assets/icon-download.svg');
+        background-repeat: no-repeat;
+        height: rem(32px);
+        width: rem(32px);
+        margin-right: rem(10px);
+        &:hover {
+            background-image: url('../../assets/icon-download-hover.svg');
+        }
+    }
+
+    .gif-hover-expand-btn {
+        background-image: url('../../assets/icon-max-normal.svg');
+        background-repeat: no-repeat;
+        height: rem(32px);
+        width: rem(32px);
+        margin-right: rem(10px);
+        &:hover {
+            background-image: url('../../assets/icon-max-hover.svg');
+        }
+    }
+}
+
+.gif-hover-text {
+    margin: rem(80px) rem(18px) 0;
+
+    .gif-hover-user {
+        font-family: $fontR;
+        font-weight: $regularR;
+        font-size: rem(15px);
+        color: $white;
+        margin-bottom: rem(6px);
+    }
+
+    .gif-hover-title {
+        font-family: $fontR;
+        font-weight: $mediumR;
+        font-size: rem(16px);
+        color: $white;
     }
 }
 
