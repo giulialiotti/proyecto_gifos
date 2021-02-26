@@ -100,6 +100,7 @@ function drawHoverGif(gifs, i, div) {
     user.classList.add('gif-hover-user');
     title.classList.add('gif-hover-title');    
     
+    likeBtn.addEventListener('click', () => addFavorite(gif));
 
     div.appendChild(hover);
     hover.append(hoverIcons, hoverText);
@@ -112,6 +113,25 @@ function removeHoverGif(div) {
     div.removeChild(hover);
 }
 
+function addFavorite(gif) {
+    let favorites = JSON.parse(localStorage.getItem('favorites'));
+    let favIndex;
+
+    if (!favorites) {
+        favorites = [];
+        favIndex = -1;
+    } else {
+        favIndex = favorites.findIndex(favorites => favorites.id == gif.id);
+    }
+
+    if (favIndex == -1) {
+        favorites.push(gif);
+    } else {
+        favorites.splice(favIndex, 1);
+    }
+
+    localStorage.setItem('favorites',JSON.stringify(favorites));
+}
 // ---- ---- ---- ---- ---- HIDE AND SHOW ITEMS ---- ---- ---- ---- ----
 
 function showTrendingText() {
