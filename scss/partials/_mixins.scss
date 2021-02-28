@@ -1,7 +1,36 @@
-// ---- ---- ---- ---- ---- Función para convertir px a rem ---- ---- ---- ---- ----
+// ---- ---- ---- ---- ---- Convert px to rem ---- ---- ---- ---- ----
 
 @function rem($size) {
     @return $size / 16px * 1rem;
   }
 
 // ---- ---- ---- ---- ---- Mixins ---- ---- ---- ---- ----
+
+@mixin like-button ($height, $width) {
+  background-image: url('../../assets/icon-fav.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  height: rem($height);
+  width: rem($width);
+  border: 1px solid rgba(156, 175, 195, 0.5);
+  border-radius: 6px;
+  &:hover {
+      background-image: url('../../assets/icon-fav-hover.svg');
+  }
+  &:active {
+      background-image: url('../../assets/icon-fav-active.svg');
+  }
+}
+
+@mixin save-button ($height, $width) {
+  background-image: url('../../assets/icon-download.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  height: rem($height);
+  width: rem($width);
+  border: 1px solid rgba(156, 175, 195, 0.5);
+  border-radius: 6px;
+  &:hover {
+      background-image: url('../../assets/icon-download-hover.svg');
+  }
+}

@@ -257,6 +257,8 @@ let closeGallery = document.getElementById('closeGallery');
 let btnLeft = document.querySelector('.btn-left');
 let btnRight = document.querySelector('.btn-right');
 let expandedGif = document.getElementById('expandedGif');
+let galleryUser = document.getElementById('galleryUser');
+let galleryGifTitle = document.getElementById('galleryGifTitle');
 let gifIndex;
 
 closeGallery.addEventListener('click', () => {

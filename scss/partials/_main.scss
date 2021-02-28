@@ -185,10 +185,6 @@ input::placeholder {
     }
 }
 
-.button-slider {
-    display: none;
-}
-
 .gifs-slider {
     display: flex;
     justify-content: flex-start;
@@ -304,28 +300,13 @@ input::placeholder {
     margin-top: rem(10px);
 
     .gif-hover-like-btn {
-        background-image: url('../../assets/icon-fav.svg');
-        background-repeat: no-repeat;
-        height: rem(32px);
-        width: rem(32px);
+        @include like-button (32px, 32px);
         margin-right: rem(10px);
-        &:hover {
-            background-image: url('../../assets/icon-fav-hover.svg');
-        }
-        &:active {
-            background-image: url('../../assets/icon-fav-active.svg');
-        }
     }
 
     .gif-hover-save-btn {
-        background-image: url('../../assets/icon-download.svg');
-        background-repeat: no-repeat;
-        height: rem(32px);
-        width: rem(32px);
+        @include save-button (32px, 32px);
         margin-right: rem(10px);
-        &:hover {
-            background-image: url('../../assets/icon-download-hover.svg');
-        }
     }
 
     .gif-hover-expand-btn {
@@ -380,10 +361,60 @@ input::placeholder {
     background-repeat: no-repeat;
     width: rem(14px);
     height: rem(14px);
+    margin: 10% 9% 0;
+    float: right;
     body.dark & {
         background-image: url('../../assets/close-modo-noct.svg');
     }
-} 
+}
+
+.expanded-gif-container {
+    width: 84.8%;
+    height: 42%;
+    margin: 156px auto 0;
+
+    #expandedGif {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+}
+
+#galleryUser {
+    font-family: $fontR;
+    font-weight: $regularR;
+    font-size: rem(15px);
+    color: $black;
+    margin-bottom: 3%;
+}
+
+#galleryGifTitle {
+    font-family: $fontM;
+    font-weight: $boldM;
+    font-size: rem(16px);
+    color: $black;
+}
+
+.gif-expand-like-btn {
+    @include like-button (36px, 36px);
+}
+
+.gif-expand-save-btn {
+    @include save-button (36px, 36px);
+    margin-left: 5px;
+}
+
+.gallery-text-and-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 14px 29px 0;
+}
+
+.gallery-buttons {
+    display: flex;
+}
 
 // ---- ---- ---- ---- ---- MY GIFOS SECTION ---- ---- ---- ---- ----
 

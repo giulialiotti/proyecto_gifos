@@ -243,6 +243,38 @@
         overflow-x: hidden;
     }
 
+    // ---- ---- ---- ---- ---- GIFS GALLERY EXPANDED ---- ---- ---- ---- ----
+    
+    .expand-flex-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 160px;
+    }
+
+    #closeGallery {
+        width: rem(15px);
+        height: rem(15px);
+        margin: 0;
+        position: absolute;
+        top: 12%;
+        right: 19.3%;
+    }
+
+    .expanded-gif-container {
+        width: 48.3%;
+        height: 50.1%;
+        margin: 0 25px;
+    }
+
+    .gallery-text-and-buttons {
+        margin: 27px 27% 0;
+    }
+
+    .gif-expand-save-btn {
+        margin-left: 21px;
+    }
+
     // ---- ---- ---- ---- ---- FAVORITES SECTION ---- ---- ---- ---- ----
 
     #favoritesSection {
@@ -305,137 +337,135 @@
         }
     }
 
-}
-
 // ---- ---- ---- ---- ---- CREATE GIF SECTION ---- ---- ---- ---- ----
 
-#createGifSection {
+    #createGifSection {
 
-    .square { 
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        border: 1px solid $purple;
-        width: rem(688px);
-        height: rem(390px);
-        margin: 0 auto;
-        body.dark & {
-            border: 1px solid $white;
-        }
-
-        h2 {
-            font-family: $fontM;
-            font-weight: $boldM;
-            font-size: rem(25px);
-            color: $purple;
-            text-align: center;
-            line-height: rem(35px);
-            padding-bottom: rem(3px);
-            body.dark & {
-                color: $white;
-            }
-        }
-        p {
-            font-family: $fontR;
-            font-size: rem(16px);
-            font-weight: $regularR;
-            color: $black;
-            text-align: center;
-            line-height: rem(29px);
-            body.dark & {
-                color: $white;
-            }
-        }
-    }
-
-    .page-numbers {
-        display: flex;
-        justify-content: space-around;
-        margin: 24px 44.8% 19px;
-
-        button {
-            font-family: $fontR;
-            font-weight: $mediumR;
-            font-size: rem(18px);
-            color: $purple;
-            text-align: center;
-            border: none;
-            background: transparent;
-            outline: none;
+        .square { 
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
             border: 1px solid $purple;
-            width: rem(32px);
-            height: rem(32px);
-            border-radius: 50%;
-            &:hover {
-                color: $white;
-                background-color: $purple;
-            }
-
+            width: rem(688px);
+            height: rem(390px);
+            margin: 0 auto;
             body.dark & {
                 border: 1px solid $white;
-                color: $white;
-                &:hover {
-                    background-color: $white;
-                    color: $black;
+            }
+
+            h2 {
+                font-family: $fontM;
+                font-weight: $boldM;
+                font-size: rem(25px);
+                color: $purple;
+                text-align: center;
+                line-height: rem(35px);
+                padding-bottom: rem(3px);
+                body.dark & {
+                    color: $white;
+                }
+            }
+            p {
+                font-family: $fontR;
+                font-size: rem(16px);
+                font-weight: $regularR;
+                color: $black;
+                text-align: center;
+                line-height: rem(29px);
+                body.dark & {
+                    color: $white;
                 }
             }
         }
-    }
 
-    .line {
-        width: 55.3%;
-        height: rem(6.9px);
-        background-color: $purple;
-        border-radius: 5px;
-        margin: 0 auto 20px;
-        body.dark & {
-            background-color: $white;
+        .page-numbers {
+            display: flex;
+            justify-content: space-around;
+            margin: 24px 44.8% 19px;
+
+            button {
+                font-family: $fontR;
+                font-weight: $mediumR;
+                font-size: rem(18px);
+                color: $purple;
+                text-align: center;
+                border: none;
+                background: transparent;
+                outline: none;
+                border: 1px solid $purple;
+                width: rem(32px);
+                height: rem(32px);
+                border-radius: 50%;
+                &:hover {
+                    color: $white;
+                    background-color: $purple;
+                }
+
+                body.dark & {
+                    border: 1px solid $white;
+                    color: $white;
+                    &:hover {
+                        background-color: $white;
+                        color: $black;
+                    }
+                }
+            }
+        }
+
+        .line {
+            width: 55.3%;
+            height: rem(6.9px);
+            background-color: $purple;
+            border-radius: 5px;
+            margin: 0 auto 20px;
+            body.dark & {
+                background-color: $white;
+            }
+        }
+
+        .btn-begin {
+            margin: 0 auto;
+        }
+        
+    }
+    .createGifContainer {
+        display: flex;
+        padding: 0 26.1% 0 10.8%;
+
+        .camaraContainer {
+        display: flex;
+        display: flex;
+        position: relative;
+        z-index: 9;
+        top: 100px;
+        left: 25px;
+
+            .camara {
+                background-image: url('../../assets/camara.svg');
+                background-repeat: no-repeat;
+                width: rem(123px);
+                height: rem(163px);
+            }
+
+            .camara-light {
+                background-image: url('../../assets/element-luz-camara.svg');
+                background-repeat: no-repeat;
+                width: rem(91px);
+                height: rem(151px);
+                margin-top: rem(20px);
+            }
         }
     }
 
-    .btn-begin {
-        margin: 0 auto;
+    .movieIlustration {
+        background-image: url('../../assets/pelicula.svg');
+        background-repeat: no-repeat;
+        width: rem(142px);
+        height: rem(89px);
+        position: absolute;
+        z-index: 9999;
+        top: 500px;
+        right: 11.6%;
     }
-    
+
 }
-.createGifContainer {
-    display: flex;
-    padding: 0 26.1% 0 10.8%;
-
-    .camaraContainer {
-    display: flex;
-    display: flex;
-    position: relative;
-    z-index: 9;
-    top: 100px;
-    left: 25px;
-
-        .camara {
-            background-image: url('../../assets/camara.svg');
-            background-repeat: no-repeat;
-            width: rem(123px);
-            height: rem(163px);
-        }
-
-        .camara-light {
-            background-image: url('../../assets/element-luz-camara.svg');
-            background-repeat: no-repeat;
-            width: rem(91px);
-            height: rem(151px);
-            margin-top: rem(20px);
-        }
-    }
-}
-
-.movieIlustration {
-    background-image: url('../../assets/pelicula.svg');
-    background-repeat: no-repeat;
-    width: rem(142px);
-    height: rem(89px);
-    position: absolute;
-    z-index: 9999;
-    top: 500px;
-    right: 11.6%;
-}
-
-
