@@ -248,4 +248,17 @@ suggestionsUl.classList.add("suggestionsUl");
 // })
 
 
+// ---- ---- ---- ---- ----  ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---
+// ---- ---- ---- ---- ---- GIFS GALLERY EXPANDED ---- ---- ---- ---- ----
+// ---- ---- ---- ---- ----  ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---
 
+let gifsGallery = document.getElementById('gifsGallery');
+let closeGallery = document.getElementById('closeGallery');
+let btnLeft = document.querySelector('.btn-left');
+let btnRight = document.querySelector('.btn-right');
+let expandedGif = document.getElementById('expandedGif');
+let gifIndex;
+
+closeGallery.addEventListener('click', () => {
+  gifsGallery.classList.toggle('hide-gallery');
+});

@@ -53,6 +53,7 @@ function fetchSearchGifs(url) {
 }
 
 // ---- ---- ---- ---- ---- SEARCH RESULTS GIFS FOR LOOP ---- ---- ---- ---- ----
+
 const searchResultsGifs = document.getElementById("searchResultsGifs");
 
 function gifsLoop(gifs) {
@@ -101,6 +102,7 @@ function drawHoverGif(gifs, i, div) {
     title.classList.add('gif-hover-title');    
     
     likeBtn.addEventListener('click', () => addFavorite(gif));
+    expandBtn.addEventListener('click', () => expandGif(gifs, i));
 
     div.appendChild(hover);
     hover.append(hoverIcons, hoverText);
@@ -112,6 +114,8 @@ function removeHoverGif(div) {
     let hover = document.querySelector('.gif-hover');
     div.removeChild(hover);
 }
+
+// ---- ---- ---- ---- ---- ADD GIF TO FAVORITE SECTION ---- ---- ---- ---- ----
 
 function addFavorite(gif) {
     let favorites = JSON.parse(localStorage.getItem('favorites'));
@@ -132,6 +136,45 @@ function addFavorite(gif) {
 
     localStorage.setItem('favorites',JSON.stringify(favorites));
 }
+
+// ---- ---- ---- ---- ---- EXPAND GIF ---- ---- ---- ---- ----
+
+function expandGif(gifs, i) {
+    let gif = gifs[i];
+    expandedGif.src = gif.images.original.url;
+    expandedGif.alt = gif.title;
+    gifsGallery.classList.toggle('hide-gallery');
+
+    gifIndex = i;
+
+    btnLeft.addEventListener('click', () => {
+        moveLeft(gifs);
+    });
+    btnRight.addEventListener('click', () => {
+        moveRight(gifs);
+    });
+}
+
+function moveLeft(gifs) {
+    if (gifIndex > 0) {
+        gifIndex = gifIndex - 1;
+    } else {
+        gifIndex = gifs.length - 1;
+    }
+
+    expandedGif.src = gifs[gifIndex].images.original.url;
+}
+
+function moveRight(gifs) {
+    if (gifIndex < gifs.length - 1) {
+        gifIndex = gifIndex + 1;
+    } else {
+        gifIndex = 0;
+    }
+
+    expandedGif.src = gifs[gifIndex].images.original.u
+}
+
 // ---- ---- ---- ---- ---- HIDE AND SHOW ITEMS ---- ---- ---- ---- ----
 
 function showTrendingText() {
@@ -228,3 +271,8 @@ function changeOffset() {
 
     fetchSearchGifs(url);
 }
+
+// ---- ---- ---- ---- ----  ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---
+// ---- ---- ---- ---- ---- GIFS GALLERY EXPANDED ---- ---- ---- ---- ----
+// ---- ---- ---- ---- ----  ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---
+

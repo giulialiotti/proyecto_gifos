@@ -35,8 +35,6 @@ h1 {
     }
 }
 
-
-
 .aqua-title {
     color: $aqua;
 }
@@ -256,6 +254,50 @@ input::placeholder {
     }
 }
 
+.btn-see-more {
+    border: 1px solid $purple;
+    border-radius: 25px;
+    width: rem(127px);
+    height: rem(50px);
+    display: flex;
+    justify-content: center;
+    margin: 58px auto 78px;
+    &:hover {
+        background-color: $purple;
+    }
+
+    body.dark & {
+        border: 1px solid $white;
+        &:hover {
+            background-color: $white;
+        }
+    }
+
+    button {
+        font-family: $fontM;
+        font-weight: $boldM;
+        font-size: rem(13px);
+        color: $purple;
+        letter-spacing: 0;
+        text-align: center;
+        border: none;
+        background: transparent;
+        outline: none;
+        &:hover {
+            color: white;
+        }
+
+        body.dark & {
+            color: $white;
+            &:hover {
+                color: $black;
+            }
+        }
+    }
+}
+
+// ---- ---- ---- ---- ---- HOVER ON GIFS ---- ---- ---- ---- ----
+
 .gif-hover-icons {
     display: flex;
     justify-content: flex-end;
@@ -317,47 +359,31 @@ input::placeholder {
     }
 }
 
-.btn-see-more {
-    border: 1px solid $purple;
-    border-radius: 25px;
-    width: rem(127px);
-    height: rem(50px);
-    display: flex;
-    justify-content: center;
-    margin: 58px auto 78px;
-    &:hover {
-        background-color: $purple;
-    }
+// ---- ---- ---- ---- ---- GIFS GALLERY EXPANDED ---- ---- ---- ---- ----
 
-    body.dark & {
-        border: 1px solid $white;
-        &:hover {
-            background-color: $white;
-        }
-    }
-
-    button {
-        font-family: $fontM;
-        font-weight: $boldM;
-        font-size: rem(13px);
-        color: $purple;
-        letter-spacing: 0;
-        text-align: center;
-        border: none;
-        background: transparent;
-        outline: none;
-        &:hover {
-            color: white;
-        }
-
-        body.dark & {
-            color: $white;
-            &:hover {
-                color: $black;
-            }
-        }
-    }
+.show-gallery {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(255,255,255,0.90);
+    display: block;
 }
+
+.hide-gallery {
+    display: none;
+}
+
+#closeGallery {
+    background-image: url('../../assets/close.svg');
+    background-repeat: no-repeat;
+    width: rem(14px);
+    height: rem(14px);
+    body.dark & {
+        background-image: url('../../assets/close-modo-noct.svg');
+    }
+} 
 
 // ---- ---- ---- ---- ---- MY GIFOS SECTION ---- ---- ---- ---- ----
 
