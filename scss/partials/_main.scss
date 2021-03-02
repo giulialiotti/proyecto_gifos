@@ -292,6 +292,25 @@ input::placeholder {
     }
 }
 
+.icon-fav {
+    background-image: url('../../assets/icon-fav-sin-contenido.svg');
+    background-repeat: no-repeat;
+    width: rem(150px);
+    height: rem(151px);
+    margin: 109px auto 0;
+}
+
+.favorites-text {
+    font-family: $fontM;
+    font-weight: $boldM;
+    font-size: rem(18px);
+    color: #50E3C2;
+    text-align: center;
+    line-height: rem(28px);
+    margin: 30px auto;
+    padding: 0 50px;
+}
+
 // ---- ---- ---- ---- ---- HOVER ON GIFS ---- ---- ---- ---- ----
 
 .gif-hover-icons {
@@ -370,12 +389,12 @@ input::placeholder {
 
 .expanded-gif-container {
     width: 84.8%;
-    height: 42%;
+    //height: 42%;
     margin: 156px auto 0;
 
     #expandedGif {
         width: 100%;
-        height: 100%;
+        height: 245px;
         object-fit: cover;
         display: block;
     }

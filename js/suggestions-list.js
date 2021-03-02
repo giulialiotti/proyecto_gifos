@@ -1,60 +1,3 @@
-const APIKEY = "gUd0zCdNEkv06vVTL5GpSGw4arqlSool";
-
-// ---- ---- ---- ---- ----  ---- ---- ---- ---- ---- ---- ---- ---
-// ---- ---- ---- ---- ---- HAMBURGER MENU ---- ---- ---- ---- ----
-// ---- ---- ---- ---- ----  ---- ---- ---- ---- ---- ---- ---- ---
-
-const hamburger = document.getElementById('hamburger');
-const navUl = document.getElementById('navUl');
-
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navUl.classList.toggle('active');
-});
-
-// ---- ---- ---- ---- ----  ---- ---- ---- ---- ---- ---- ---
-// ---- ---- ---- ---- ---- DARK MODE ---- ---- ---- ---- ----
-// ---- ---- ---- ---- ----  ---- ---- ---- ---- ---- ---- ---
-
-const darkMode = document.getElementById('darkMode');
-
-darkMode.addEventListener('click', () => {
-    document.body.classList.toggle('dark');
-    changeText();
-});
-
-// ---- ---- ---- ---- ----  ---- ---- ---- ---- ---- ---- ---- ---- ---- -
-// ---- ---- ---- ---- ---- TRENDING TEXT ---- ---- ---- ---- ----
-// ---- ---- ---- ---- ----  ---- ---- ---- ---- ---- ---- ---- ---- ---- -
-
-const trendingTitle = document.getElementById('trendingTitle');
-let trendingText = document.getElementById('trendingText');
-
-endPointTrendingGifsText();
-
-// ---- ---- ---- ---- ----  ---- ---- ---- ---- ---- ---- ---- ---- ---- 
-// ---- ---- ---- ---- ---- SHOW TRENDING GIFS ---- ---- ---- ---- ----
-// ---- ---- ---- ---- ----  ---- ---- ---- ---- ---- ---- ---- ---- ----
-
-endPointTrendingGifs();
-
-// ---- ---- ---- ---- ----  ---- ---- ---- ---- ---- ---- ---- ---- ---- 
-// ---- ---- ---- ---- ---- SEARCH GIFOS RESULTS ---- ---- ---- ---- ----
-// ---- ---- ---- ---- ----  ---- ---- ---- ---- ---- ---- ---- ---- ---- 
-
-const btnSeeMore = document.querySelector('.btn-see-more');
-const divider = document.querySelector('.divider');
-const titleSearchResult = document.getElementById('titleSearchResult');
-
-// Hide, hr, trending text, grid and see more button while inactive
-hideSearchInactive();
-
-// Show search results - NO FUNCIONA 
-// btnSearch.addEventListener("click", ev => {
-//   ev.preventDefault();
-//   searchResults();
-// });
-
 // ---- ---- ---- ---- ----  ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---
 // ---- ---- ---- ---- ---- SEARCH GIFOS SUGGESTIONS LIST ---- ---- ---- ---- ----
 // ---- ---- ---- ---- ----  ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---
@@ -190,7 +133,6 @@ hideSearchInactive();
 // const inputContainer = document.querySelector('.input-container');
 
 const searchInput = document.getElementById('searchInput');
-const btnSearch = document.getElementById('btnSearch'); // NO CAMBIAR
 const URLSuggestions = "https://api.giphy.com/v1/tags/related/" + searchInput + "?&api_key=" + APIKEY + "&limit=4";
 
 function fetchSearchSuggestions(URLSuggestions) {
@@ -246,21 +188,3 @@ suggestionsUl.classList.add("suggestionsUl");
 //   clearSuggestionsContainerContent();
 //   suggestions(input).then(data =>  drawSuggestions(data));
 // })
-
-
-// ---- ---- ---- ---- ----  ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---
-// ---- ---- ---- ---- ---- GIFS GALLERY EXPANDED ---- ---- ---- ---- ----
-// ---- ---- ---- ---- ----  ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---
-
-let gifsGallery = document.getElementById('gifsGallery');
-let closeGallery = document.getElementById('closeGallery');
-let btnLeft = document.querySelector('.btn-left');
-let btnRight = document.querySelector('.btn-right');
-let expandedGif = document.getElementById('expandedGif');
-let galleryUser = document.getElementById('galleryUser');
-let galleryGifTitle = document.getElementById('galleryGifTitle');
-let gifIndex;
-
-closeGallery.addEventListener('click', () => {
-  gifsGallery.classList.toggle('hide-gallery');
-});

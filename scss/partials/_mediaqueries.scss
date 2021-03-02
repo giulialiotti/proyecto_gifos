@@ -264,7 +264,12 @@
     .expanded-gif-container {
         width: 48.3%;
         height: 50.1%;
-        margin: 0 25px;
+        margin: 0 25px; 
+
+        #expandedGif {
+            width: 100%;
+            height: 385px;
+        }
     }
 
     .gallery-text-and-buttons {
@@ -285,6 +290,20 @@
             margin-top: rem(8px);
         }
 
+    }
+
+    .icon-fav {
+        width: rem(150px);
+        height: rem(151px);
+        margin: 109px auto 0;
+    }
+    
+    .favorites-text {
+        font-size: rem(22px);
+        line-height: rem(33px);
+        //width: 35%;
+        margin: 24px auto;
+        padding: 0;
     }
 
     .grid-container-results {
