@@ -38,4 +38,7 @@ let gifIndex;
 
 // ---- ---- ---- ---- ---- FAVORITES SECTION ---- ---- ---- ---- ----
 
-const favoritesGifsGrid = document.getElementById('favoritesGifsContainer');
+const favoritesGifsContainer = document.getElementById('favoritesGifsContainer');
+const favoritesLink = document.getElementById('favoritesLink');
+const iconFav = document.querySelector('.icon-fav');
+const favoritesText = document.querySelector('.favorites-text');

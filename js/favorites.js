@@ -2,27 +2,46 @@
 // ---- ---- ---- ---- ---- FAVORITES SECTION ---- ---- ---- ---- ----
 // ---- ---- ---- ---- ----  ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---
 
-favoritesGifsGrid.style.display = "none";
+favoritesGifsContainer.style.display = "none";
 btnSeeMore.style.display = "none";
 
 function drawFavoritesGifs() {
     let favorites = JSON.parse(localStorage.getItem('favorites'));
 
-    favoritesGifsGrid.style.display = "grid"; 
-    btnSeeMore.style.display = "flex";
-    btnSeeMore.addEventListener('click', changeOffset);
+    if (favorites.length === 0) {
+        iconFav.style.display = "block";
+        favoritesText.style.display = "block";
+    } else {
+        iconFav.style.display = "none";
+        favoritesText.style.display = "none";
+        
+        showGridFavorites();
 
-    for (let i = 0; i < favorites.length; i++) {
-        let div = document.createElement("div");
-        let img = document.createElement("img");
+        for (let i = 0; i < 12; i++) {
+            let div = document.createElement("div");
+            let img = document.createElement("img");
 
-        img.src = favorites[i].images.original.url;
-        img.alt = favorites[i].title;
+            img.src = favorites[i].images.original.url;
+            img.alt = favorites[i].title;
 
-        div.appendChild(img);
-        favoritesGifsGrid.appendChild(div);
-    } 
+            div.appendChild(img);
+            favoritesGifsContainer.appendChild(div);
+
+            div.addEventListener('mouseenter', () => drawHoverGif(favorites, i, div));
+            div.addEventListener('mouseleave', () => removeHoverGif(div));
+        } 
+    }
+
+    btnSeeMore.addEventListener('click', showMoreFavorites);
 }
 
 drawFavoritesGifs();
 
+function showGridFavorites() {
+    favoritesGifsContainer.style.display = "grid";
+    btnSeeMore.style.display = "flex";
+}
+
+function showMoreFavorites(favorites) {
+    console.log("click");
+}
