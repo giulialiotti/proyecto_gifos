@@ -452,4 +452,24 @@ input::placeholder {
             color: $white;
         }
     }
+
+    .icon-my-gifos {
+        background-image: url('../../assets/icon-mis-gifos-sin-contenido.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        width: rem(150px);
+        height: rem(150px);
+        margin: 109px auto 0;
+    }
+
+    .my-gifos-text {
+        font-family: $fontM;
+        font-weight: $boldM;
+        font-size: rem(18px);
+        color: #50E3C2;
+        text-align: center;
+        line-height: rem(28px);
+        margin: 30px auto 50px;
+        padding: 0 50px;
+    }
 }

@@ -130,6 +130,10 @@
         content: '';
     }
 
+    .hide-marker {
+        display: block;
+    }
+
     #hamburger {
         display: none;
     }
@@ -324,6 +328,20 @@
             font-size: rem(25px);
             margin: 8px auto 36px;
         }
+
+        .icon-my-gifos {
+            width: rem(150px);
+            height: rem(150px);
+            margin: 109px auto 0;
+        }
+    
+        .my-gifos-text {
+            font-size: rem(22px);
+            color: #50E3C2;
+            line-height: rem(25px);
+            margin: 40px auto 136px;
+            padding: 0;
+        }
     }
 
     // ---- ---- ---- ---- ---- FOOTER ---- ---- ---- ---- ----
@@ -442,7 +460,7 @@
             }
         }
 
-        .btn-begin {
+        #beginBtn {
             margin: 0 auto;
         }
         
@@ -485,6 +503,20 @@
         z-index: 9999;
         top: 500px;
         right: 11.6%;
+        animation: move 3s infinite;
+        animation-direction: alternate;
     }
+    @keyframes move {
+        0% {
+          transform: translate(0);    
+        }
+        100% {
+          transform: translate(50px);
+        }
+      }
 
+    #video {
+        width: 480px;
+        height: 320px;
+    }
 }

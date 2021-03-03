@@ -117,3 +117,21 @@ function changeTitleSearchResults(inputText) {
     titleSearchResult.innerHTML = inputText;
 };
 
+// ---- ---- ---- ---- ----  ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---
+// ---- ---- ---- ---- ---- SEE MORE BUTTON ---- ---- ---- ---- ----
+// ---- ---- ---- ---- ----  ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---
+
+/* BOTON VER MÁS:
+Capturo el evento click en el botón
+Creo funcion y se coloca dentro del evento
+La funcion cambia el offset de la URL del fetch y va sumando de a 12
+Reutilizo funciones fetchSearchGifs(url) para el fetch y gifsLoop(gifs)
+para dibujarlos que esta dentro de fetchSearchGifs(url)*/
+
+function changeOffset() {
+    let offset =+ 12; 
+    let inputText = JSON.parse(localStorage.getItem('inputValue'));
+    const url = `https://api.giphy.com/v1/gifs/search?api_key=${APIKEY}&limit=12&offset=${offset}&q=${inputText}`;
+
+    fetchSearchGifs(url);
+}

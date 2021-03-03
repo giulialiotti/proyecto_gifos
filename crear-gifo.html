@@ -59,9 +59,14 @@
 
             <div class="square">
                 <div class="square-lines">
-                    <h2>Aquí podrás<br>crear tus propios <span class="aqua-title">GIFOS</span></h2>
-                    <p>¡Crea tu GIFO en sólo 3 pasos!</p>
-                    <p>(sólo necesitas una cámara para grabar un video)</p>
+                    <div id="createGifText">
+                        <h2>Aquí podrás<br>crear tus propios <span class="aqua-title">GIFOS</span></h2>
+                        <p>¡Crea tu GIFO en sólo 3 pasos!</p>
+                        <p>(sólo necesitas una cámara para grabar un video)</p>
+                    </div>
+                    <div>
+                        <video id="video" src=""></video>
+                    </div>
                 </div>
             </div>
         </div>
@@ -77,8 +82,12 @@
         
         <div class="line"></div>
 
-        <div class="btn-see-more btn-begin">
+        <div id="beginBtn" class="btn-see-more">
             <button>COMENZAR</button>
+        </div>
+
+        <div id="stopBtn" class="btn-see-more">
+            <button>FINALIZAR</button>
         </div>
 
     </section>
@@ -97,8 +106,10 @@
     
     <div class="inferior-line"></div>
 
+    <script src="https://www.WebRTC-Experiment.com/RecordRTC.js"></script>
     <script src="js/variables.js"></script>
     <script src="js/buttons.js"></script>
+    <script src="js/create-gif.js"></script>
     
 </body>
 </html>

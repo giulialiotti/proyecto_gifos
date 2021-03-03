@@ -4,6 +4,8 @@
 
 function drawHoverGif(gifs, i, div) {
     let gif = gifs[i];
+    let url = gif.images.original.url;
+
     let hover = document.createElement('div');
 
     let hoverIcons = document.createElement('div');
@@ -31,6 +33,7 @@ function drawHoverGif(gifs, i, div) {
     
     likeBtn.addEventListener('click', () => addFavorite(gif));
     expandBtn.addEventListener('click', () => expandGif(gifs, i));
+    saveBtn.addEventListener('click', () =>  downloadGif(url));
 
     div.appendChild(hover);
     hover.append(hoverIcons, hoverText);
