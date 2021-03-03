@@ -478,14 +478,14 @@
         left: 25px;
 
             .camara {
-                background-image: url('../../assets/camara.svg');
+                background-image: url('../assets/camara.svg');
                 background-repeat: no-repeat;
                 width: rem(123px);
                 height: rem(163px);
             }
 
             .camara-light {
-                background-image: url('../../assets/element-luz-camara.svg');
+                background-image: url('../assets/element-luz-camara.svg');
                 background-repeat: no-repeat;
                 width: rem(91px);
                 height: rem(151px);
@@ -495,7 +495,7 @@
     }
 
     .movieIlustration {
-        background-image: url('../../assets/pelicula.svg');
+        background-image: url('../assets/pelicula.svg');
         background-repeat: no-repeat;
         width: rem(142px);
         height: rem(89px);

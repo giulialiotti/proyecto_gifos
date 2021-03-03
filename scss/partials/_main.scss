@@ -293,7 +293,7 @@ input::placeholder {
 }
 
 .icon-fav {
-    background-image: url('../../assets/icon-fav-sin-contenido.svg');
+    background-image: url('../assets/icon-fav-sin-contenido.svg');
     background-repeat: no-repeat;
     width: rem(150px);
     height: rem(151px);
@@ -329,13 +329,13 @@ input::placeholder {
     }
 
     .gif-hover-expand-btn {
-        background-image: url('../../assets/icon-max-normal.svg');
+        background-image: url('../assets/icon-max-normal.svg');
         background-repeat: no-repeat;
         height: rem(32px);
         width: rem(32px);
         margin-right: rem(10px);
         &:hover {
-            background-image: url('../../assets/icon-max-hover.svg');
+            background-image: url('../assets/icon-max-hover.svg');
         }
     }
 }
@@ -376,14 +376,14 @@ input::placeholder {
 }
 
 #closeGallery {
-    background-image: url('../../assets/close.svg');
+    background-image: url('../assets/close.svg');
     background-repeat: no-repeat;
     width: rem(14px);
     height: rem(14px);
     margin: 10% 9% 0;
     float: right;
     body.dark & {
-        background-image: url('../../assets/close-modo-noct.svg');
+        background-image: url('../assets/close-modo-noct.svg');
     }
 }
 
@@ -454,11 +454,11 @@ input::placeholder {
     }
 
     .icon-my-gifos {
-        background-image: url('../../assets/icon-mis-gifos-sin-contenido.svg');
+        background-image: url('../assets/icon-mis-gifos-sin-contenido.svg');
         background-repeat: no-repeat;
         background-position: center;
         width: rem(150px);
-        height: rem(150px);
+        height: rem(150px); 
         margin: 109px auto 0;
     }
 
