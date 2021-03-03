@@ -7,7 +7,7 @@
 // ---- ---- ---- ---- ---- Mixins ---- ---- ---- ---- ----
 
 @mixin like-button ($height, $width) {
-  background-image: url('../../assets/icon-fav.svg');
+  background-image: url('../assets/icon-fav.svg');
   background-repeat: no-repeat;
   background-position: center;
   height: rem($height);
@@ -15,15 +15,15 @@
   border: 1px solid rgba(156, 175, 195, 0.5);
   border-radius: 6px;
   &:hover {
-      background-image: url('../../assets/icon-fav-hover.svg');
+      background-image: url('../assets/icon-fav-hover.svg');
   }
   &:active {
-      background-image: url('../../assets/icon-fav-active.svg');
+      background-image: url('../assets/icon-fav-active.svg');
   }
 }
 
 @mixin save-button ($height, $width) {
-  background-image: url('../../assets/icon-download.svg');
+  background-image: url('../assets/icon-download.svg');
   background-repeat: no-repeat;
   background-position: center;
   height: rem($height);
@@ -31,6 +31,6 @@
   border: 1px solid rgba(156, 175, 195, 0.5);
   border-radius: 6px;
   &:hover {
-      background-image: url('../../assets/icon-download-hover.svg');
+      background-image: url('../assets/icon-download-hover.svg');
   }
 }
