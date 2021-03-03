@@ -24,6 +24,7 @@ function drawFavoritesGifs() {
             img.src = favorites[i].images.original.url;
             img.alt = favorites[i].title;
 
+            div.classList.add('gif-container');
             div.appendChild(img);
             favoritesGifsContainer.appendChild(div);
 

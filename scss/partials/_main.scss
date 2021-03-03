@@ -229,8 +229,9 @@ input::placeholder {
     grid-gap: rem(21px);
     margin: 0 rem(21px);
 
-    div {
+    .gif-container {
         position: relative;
+        height: rem(120px);
 
         img {
             width: 100%;

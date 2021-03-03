@@ -54,6 +54,8 @@ function gifsLoop(gifs) {
         img.src = gifs[i].images.original.url;
         img.alt = gifs[i].title;
 
+        div.classList.add('gif-container');
+
         div.addEventListener('mouseenter', () => drawHoverGif(gifs, i, div));
         div.addEventListener('mouseleave', () => removeHoverGif(div));
         
