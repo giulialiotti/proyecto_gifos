@@ -45,6 +45,10 @@ function drawFavorites(favorites, i) {
 
     div.addEventListener('mouseenter', () => drawHoverGif(favorites, i, div));
     div.addEventListener('mouseleave', () => removeHoverGif(div));
+
+    if (favorites.length <= 12) {
+        btnSeeMore.style.display = 'none';
+    }
 }
 
 function showGridFavorites(favorites) {
@@ -61,6 +65,6 @@ function showGridFavorites(favorites) {
         // If there's no more favorites hide the see more button
         if (currentIndex >= favorites.length) {
             btnSeeMore.style.display = 'none';
-          }
+        }
     });
 }

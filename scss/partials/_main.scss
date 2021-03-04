@@ -225,7 +225,7 @@ input::placeholder {
 .grid-container-results {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: repeat(6, rem(120px));
+    grid-template-rows: rem(120px);
     grid-gap: rem(21px);
     margin: 0 rem(21px) 78px;
 
