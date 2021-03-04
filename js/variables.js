@@ -42,3 +42,10 @@ const favoritesGifsContainer = document.getElementById('favoritesGifsContainer')
 const favoritesLink = document.getElementById('favoritesLink');
 const iconFav = document.querySelector('.icon-fav');
 const favoritesText = document.querySelector('.favorites-text');
+let likeBtn = document.querySelector('.gif-hover-like-btn');
+let favorites = JSON.parse(localStorage.getItem('favorites'));
+let currentIndex = 12;
+
+// ---- ---- ---- ---- ---- OFFSET ON SEARCH ENDPOINT ---- ---- ---- ---- ----
+
+let offset = 0;

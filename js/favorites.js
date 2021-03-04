@@ -5,8 +5,7 @@
 favoritesGifsContainer.style.display = "none";
 btnSeeMore.style.display = "none";
 
-function drawFavoritesGifs() {
-    let favorites = JSON.parse(localStorage.getItem('favorites'));
+function favoritesGifs() {
 
     if (favorites.length === 0) {
         iconFav.style.display = "block";
@@ -15,34 +14,53 @@ function drawFavoritesGifs() {
         iconFav.style.display = "none";
         favoritesText.style.display = "none";
         
-        showGridFavorites();
+        showGridFavorites(favorites);
+        favoritesGifsLoop(favorites);
 
-        for (let i = 0; i < 12; i++) {
-            let div = document.createElement("div");
-            let img = document.createElement("img");
-
-            img.src = favorites[i].images.original.url;
-            img.alt = favorites[i].title;
-
-            div.classList.add('gif-container');
-            div.appendChild(img);
-            favoritesGifsContainer.appendChild(div);
-
-            div.addEventListener('mouseenter', () => drawHoverGif(favorites, i, div));
-            div.addEventListener('mouseleave', () => removeHoverGif(div));
-        } 
+        // No funciona
+        // likeBtn.addEventListener('click', () => {
+        //     location.reload();
+        // });
     }
-
-    btnSeeMore.addEventListener('click', showMoreFavorites);
 }
 
-drawFavoritesGifs();
+favoritesGifs();
 
-function showGridFavorites() {
+function favoritesGifsLoop(favorites) {
+    for (let i = 0; i < 12; i++) {
+        drawFavorites(favorites, i);
+    }
+}
+
+function drawFavorites(favorites, i) {
+    let div = document.createElement("div");
+    let img = document.createElement("img");
+
+    img.src = favorites[i].images.original.url;
+    img.alt = favorites[i].title;
+
+    div.classList.add('gif-container');
+    div.appendChild(img);
+    favoritesGifsContainer.appendChild(div);
+
+    div.addEventListener('mouseenter', () => drawHoverGif(favorites, i, div));
+    div.addEventListener('mouseleave', () => removeHoverGif(div));
+}
+
+function showGridFavorites(favorites) {
     favoritesGifsContainer.style.display = "grid";
     btnSeeMore.style.display = "flex";
-}
-
-function showMoreFavorites(favorites) {
-    console.log("click");
+    btnSeeMore.addEventListener('click', () => {
+        for (let i = currentIndex; i < currentIndex + 12; i++) {
+            if (favorites[i]) {
+                drawFavorites(favorites, i);
+            }
+        }
+        currentIndex += 12;
+        
+        // If there's no more favorites hide the see more button
+        if (currentIndex >= favorites.length) {
+            btnSeeMore.style.display = 'none';
+          }
+    });
 }

@@ -12,7 +12,7 @@ btnSearch.addEventListener("click", ev => {
 
 function searchResults() {
     //hideTrendingText();
-
+    
     // Clean grid search results
     searchResultsGifs.innerHTML = '';
 
@@ -130,10 +130,11 @@ La funcion cambia el offset de la URL del fetch y va sumando de a 12
 Reutilizo funciones fetchSearchGifs(url) para el fetch y gifsLoop(gifs)
 para dibujarlos que esta dentro de fetchSearchGifs(url)*/
 
-function changeOffset() {
-    let offset =+ 12; 
+function changeOffset() { 
+    offset += 12;
+
     let inputText = JSON.parse(localStorage.getItem('inputValue'));
     const url = `https://api.giphy.com/v1/gifs/search?api_key=${APIKEY}&limit=12&offset=${offset}&q=${inputText}`;
-
+    
     fetchSearchGifs(url);
 }

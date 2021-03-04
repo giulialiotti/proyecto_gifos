@@ -227,7 +227,7 @@ input::placeholder {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(6, rem(120px));
     grid-gap: rem(21px);
-    margin: 0 rem(21px);
+    margin: 0 rem(21px) 78px;
 
     .gif-container {
         position: relative;
