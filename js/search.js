@@ -11,7 +11,7 @@ btnSearch.addEventListener("click", ev => {
 });
 
 function searchResults() {
-    //hideTrendingText();
+    hideTrendingText();
     
     // Clean grid search results
     searchResultsGifs.innerHTML = '';
@@ -72,8 +72,15 @@ function showTrendingText() {
 };
 
 function hideTrendingText() {
-    trendingTitle.style.display = "none";
-    trendingText.style.display = "none";
+    if (window.matchMedia("(min-width: 960px)").matches) {
+        /* The screen has at least 960px of width */
+        trendingTitle.style.display = "none";
+        trendingText.style.display = "none";
+    } else {
+        /* The screen has less than 960px of width */
+        trendingTitle.style.display = "block";
+        trendingText.style.display = "block";
+    }
 };
 
 function hideSearchInactive() {
@@ -127,8 +134,7 @@ function changeTitleSearchResults(inputText) {
 Capturo el evento click en el botón
 Creo funcion y se coloca dentro del evento
 La funcion cambia el offset de la URL del fetch y va sumando de a 12
-Reutilizo funciones fetchSearchGifs(url) para el fetch y gifsLoop(gifs)
-para dibujarlos que esta dentro de fetchSearchGifs(url)*/
+Reutilizo funciones fetchSearchGifs(url) para el fetch y dibujarlos */
 
 function changeOffset() { 
     offset += 12;

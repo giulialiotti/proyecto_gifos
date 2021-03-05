@@ -2,9 +2,15 @@
 // ---- ---- ---- ---- ---- GIFS GALLERY EXPANDED ---- ---- ---- ---- ----
 // ---- ---- ---- ---- ----  ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---
 
-closeGallery.addEventListener('click', () => {
-  gifsGallery.classList.toggle('hide-gallery');
+closeGalleryBtn.addEventListener('click', () => {
+    gifsGallery.classList.toggle('hide-gallery');
 });
+
+// function closeGallery() {
+//     gifsGallery.classList.toggle('hide-gallery');
+//     btnLeft.removeEventListener('click');
+//     btnRight.removeEventListener('click');
+// }
 
 // ---- ---- ---- ---- ---- EXPAND GIF ---- ---- ---- ---- ----
 
@@ -60,5 +66,5 @@ function moveRight(gifs) {
         gifIndex = 0;
     }
 
-    expandedGif.src = gifs[gifIndex].images.original.u
+    expandedGif.src = gifs[gifIndex].images.original.url;
 }
