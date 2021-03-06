@@ -166,7 +166,7 @@ input::placeholder {
         padding-top: rem(46px);
     }
 
-    p {
+    .text-trending-section {
         font-family: $fontR;
         font-size: rem(16px);
         font-weight: $regularR;
@@ -179,7 +179,7 @@ input::placeholder {
     body.dark & {
         background-color: $darker;
 
-        h2, p {
+        h2, .text-trending-section {
             color: $white;
         }
     }
@@ -194,6 +194,7 @@ input::placeholder {
 }
 
 .gif-images {
+    position: relative;
     width: 100%;
     margin-right: rem(22px);
 
@@ -201,6 +202,20 @@ input::placeholder {
         width: rem(243px);
         height: rem(187px);
         object-fit: cover;
+    }
+
+    .gif-hover {
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: $purple;
+        opacity: 0.6;
+        width: 100%;
+        height: rem(187px);  
+    }
+
+    .gif-hover-text {
+        margin: rem(65px) rem(18px) 0;
     }
 }
 
@@ -364,6 +379,7 @@ input::placeholder {
 
 .show-gallery {
     position: fixed;
+    z-index: 9;
     top: 0;
     left: 0;
     width: 100vw;

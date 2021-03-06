@@ -32,7 +32,6 @@ endPointTrendingGifs();
 
 let btnLeftTrending = document.querySelector('.btn-left-trending');
 let btnRightTrending = document.querySelector('.btn-right-trending');
-let img;
 
 function drawTrendingGifs(trendingGifs) {
     const gifsSlider = document.querySelector('.gifs-slider');
@@ -66,7 +65,7 @@ btnRightTrending.addEventListener('click', () => {
 
 // ---- ---- ---- ---- ---- MOVE LEFT AND RIGHT ARROWS ON DESKTOP ---- ---- ---- ---- ----
 // NO FUNCIONA
-function moveLeftTrending(trendingGifs, img) {
+function moveLeftTrending(trendingGifs) {
     if (gifIndex > 0) {
         gifIndex = gifIndex - 1;
     } else {
