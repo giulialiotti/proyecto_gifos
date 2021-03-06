@@ -55,8 +55,7 @@ function moveLeft(gifs) {
     } else {
         gifIndex = gifs.length - 1;
     }
-
-    expandedGif.src = gifs[gifIndex].images.original.url;
+    changeContent(gifs);
 }
 
 function moveRight(gifs) {
@@ -65,6 +64,11 @@ function moveRight(gifs) {
     } else {
         gifIndex = 0;
     }
+    changeContent(gifs);
+}
 
+function changeContent(gifs) {
     expandedGif.src = gifs[gifIndex].images.original.url;
+    galleryUser.textContent = gifs[gifIndex].username == '' ? 'Unknown' : gifs[gifIndex].username;
+    galleryGifTitle.textContent = gifs[gifIndex].title;
 }
