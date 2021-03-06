@@ -49,3 +49,8 @@ let currentIndex = 12;
 // ---- ---- ---- ---- ---- OFFSET ON SEARCH ENDPOINT ---- ---- ---- ---- ----
 
 let offset = 0;
+
+// ---- ---- ---- ---- ---- TRENDING SLIDER ---- ---- ---- ---- ----
+
+let btnLeftTrending = document.querySelector('.btn-left-trending');
+let btnRightTrending = document.querySelector('.btn-right-trending');
