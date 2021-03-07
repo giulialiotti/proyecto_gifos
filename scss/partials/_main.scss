@@ -56,7 +56,7 @@ input[type="text"] {
     border: none;
     background: transparent;
     margin-left: 14.7%;
-    width: 70%;
+    //width: 70%;
     outline: none;
     font-family: $fontR;
     font-weight: $regularR;
@@ -95,6 +95,8 @@ input::placeholder {
 
     div {
         display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
 }
 
@@ -180,17 +182,25 @@ input::placeholder {
         font-weight: $regularR;
         font-size: rem(16px);
         color: $gray;
-        text-align: left;
-
-        .grey-lupa {
-            background-image: url('../assets/icon-search-grey.svg');
-            width: 15.8px;
-            height: 15.8px;
-            background-repeat: no-repeat;
-            background-position: center;
-            margin-right: 5px;
-        }
+        text-align: left;    
     }
+}
+
+.grey-lupa {
+    background-image: url('../assets/icon-search-grey.svg');
+    width: 15.8px;
+    height: 15.8px;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 5px;
+}
+
+#insertLupa {
+    margin-left: 16%;
+}
+
+input[type="text"].active-search {
+    margin-left: 1%;
 }
 
 // ---- ---- ---- ---- ---- TRENDING SECTION ---- ---- ---- ---- ----

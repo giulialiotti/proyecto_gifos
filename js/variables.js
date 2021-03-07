@@ -14,7 +14,8 @@ const darkMode = document.getElementById('darkMode');
 const btnSeeMore = document.getElementById('btn-see-more');
 const divider = document.querySelector('.divider');
 const titleSearchResult = document.getElementById('titleSearchResult');
-const btnSearch = document.getElementById('btnSearch'); // NO CAMBIAR
+const btnSearch = document.getElementById('btnSearch'); 
+let searchInput = document.getElementById('searchInput');
 
 // ---- ---- ---- ---- ---- SEARCH RESULTS GIFS FOR LOOP ---- ---- ---- ---- ----
 

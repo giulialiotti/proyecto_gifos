@@ -66,3 +66,38 @@ function downloadGif(url) {
         link.remove();
     });
 }
+
+// ---- ---- ---- ---- ----  ---- ---- ---- ---- ---- ---- ---- ---- ---- 
+// ---- ---- ---- ---- ---- CHANGE LUPA TO CROSS ---- ---- ---- ---- ---- 
+// ---- ---- ---- ---- ----  ---- ---- ---- ---- ---- ---- ---- ---- ---- 
+
+if (searchInput.value === "") {
+    btnSearch.style.backgroundImage = "url('../assets/icon-search.svg')";
+    btnSearch.addEventListener("click", ev => {
+        ev.preventDefault();
+        searchResults();
+    });
+} else {
+    btnSearch.style.backgroundImage = "url('../assets/close.svg')";
+    btnSearch.addEventListener("click", ev => {
+        ev.preventDefault();
+        searchInput.value = "";
+    });
+}
+
+// ---- ---- ---- ---- ---- ADD LUPA NEXT TO INPUT ---- ---- ---- ---- ----
+
+function lupaChanges() {
+  let insertLupa = document.getElementById('insertLupa');  
+  insertLupa.style.visibility = "visible";
+  let span = document.createElement('span');
+  span.classList.add('grey-lupa-input', 'grey-lupa');
+  insertLupa.appendChild(span);
+  searchInput.classList.add('active-search');
+}
+
+if (searchInput.value === "") {
+    insertLupa.style.visibility= "hidden";
+} else {
+    lupaChanges();
+}

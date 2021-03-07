@@ -130,7 +130,7 @@
 //     suggestionsList.innerHTML = `<ul>${content}</ul>`;
 // }
 
-let searchInput = document.getElementById('searchInput');
+
 let input;
 const URLSuggestions = `https://api.giphy.com/v1/tags/related/${searchInput}?&api_key=${APIKEY}&limit=4`;
 const URLAutocomplete = `https://api.giphy.com/v1/gifs/search/tags?&api_key=${APIKEY}&q=${input}&limit=4`;
@@ -154,20 +154,33 @@ function getSuggestions() {
 
 function drawSuggestions(suggestions) {
   suggestionsList.innerHTML = '';
-  suggestions.forEach(term => {
+
+  suggestions.forEach(item => {
     let li = document.createElement('li');
     let span = document.createElement('span');
+
     li.classList.add('suggestions-li');
     span.classList.add('grey-lupa');
-    li.innerText = term.name;
+
+    li.innerText = item.name;
+
     li.appendChild(span);
     suggestionsList.appendChild(li);
+
+    li.addEventListener('click', () => selectItem(item));
   })
 }
 
 searchInput.addEventListener('keyup', () => {
   console.log(searchInput.value);
-  let results = suggestions.name.filter(term => term.toLowerCase().includes(searchInput.value))
-  getSuggestions();
+  let results = suggestions.name.filter(item => item.toLowerCase().includes(searchInput.value));
   drawSuggestions(results);
 });
+
+function selectItem(item) {
+  console.log(item.name)
+  searchInput.innerText = item.name;
+  let url = `https://api.giphy.com/v1/gifs/search?api_key=${APIKEY}&limit=12&offset=0&q=${item}`;
+  //console.log(url);
+  fetchSearchGifs(url);
+}

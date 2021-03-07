@@ -155,7 +155,7 @@
         width: 38.3%;
 
         div {
-            justify-content: space-around;
+            justify-content: space-between;
         }
     }
 
@@ -163,9 +163,9 @@
         width: 27.7%;
     }
 
-    input[type="text"] {
-        margin-left: rem(54px);
-    }
+    // input[type="text"] {
+    //     margin-left: rem(54px);
+    // }
 
     #searchBarSection {
         
@@ -202,7 +202,14 @@
                 margin-right: 14px;
             }
         }
-        
+    }
+
+    #insertLupa {
+        margin-left: 14%;
+    }
+
+    input[type="text"].active-search {
+        margin-left: 4%;
     }
 
     // ---- ---- ---- ---- ---- TRENDING SECTION ---- ---- ---- ---- ----

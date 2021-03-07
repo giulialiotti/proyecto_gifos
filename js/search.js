@@ -5,10 +5,10 @@
 // Hide, hr, trending text, grid and see more button while inactive
 hideSearchInactive();
 
-btnSearch.addEventListener("click", ev => {
-    ev.preventDefault();
-    searchResults();
-});
+// btnSearch.addEventListener("click", ev => {
+//     ev.preventDefault();
+//     searchResults();
+// });
 
 function searchResults() {
     hideTrendingText();
