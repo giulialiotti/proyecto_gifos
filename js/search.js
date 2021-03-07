@@ -51,7 +51,7 @@ function gifsLoop(gifs) {
         let div = document.createElement("div");
         let img = document.createElement("img");
 
-        img.src = gifs[i].images.original.url;
+        img.src = gifs[i].images.downsized.url;
         img.alt = gifs[i].title;
 
         div.classList.add('gif-container');
@@ -98,43 +98,15 @@ function showSearchActive() {
     btnSeeMore.addEventListener('click', changeOffset);
 };
 
-// ---- ---- ---- ---- ----  ---- ---- ---- ---- ---- ---- ---- ---- ---- -
-// ---- ---- ---- ---- ---- TRENDING TEXT IN SEARCH BAR SECTION ---- ---- ---- ---- ----
-// ---- ---- ---- ---- ----  ---- ---- ---- ---- ---- ---- ---- ---- ---- -
-
-endPointTrendingGifsText();
-
-// Fetch trending api
-function endPointTrendingGifsText() {
-    fetch(`https://api.giphy.com/v1/trending/searches?api_key=${APIKEY}`)
-    .then(response => response.json())
-    .then(json => {
-        trendingGifsText = json.data;
-        changeTrendingText();
-    })
-    .catch(error => console.error(error));
-};
-
-// Change trending text 
-function changeTrendingText() {
-    trendingText.innerHTML = trendingGifsText[0] + ", " + trendingGifsText[1] + ", " + trendingGifsText[2] + ", " + trendingGifsText[3] + ", " + trendingGifsText[4];
-  };
-
 // ---- ---- ---- ---- ---- SEARCH TITLE ON GRID ---- ---- ---- ---- ----
 
 function changeTitleSearchResults(inputText) {
     titleSearchResult.innerHTML = inputText;
 };
 
-// ---- ---- ---- ---- ----  ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---
+// ---- ---- ---- ---- ----  ---- ---- ---- ---- ---- ---- ---- ---- ----
 // ---- ---- ---- ---- ---- SEE MORE BUTTON ---- ---- ---- ---- ----
-// ---- ---- ---- ---- ----  ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---
-
-/* BOTON VER MÁS:
-Capturo el evento click en el botón
-Creo funcion y se coloca dentro del evento
-La funcion cambia el offset de la URL del fetch y va sumando de a 12
-Reutilizo funciones fetchSearchGifs(url) para el fetch y dibujarlos */
+// ---- ---- ---- ---- ----  ---- ---- ---- ---- ---- ---- ---- ---- ----
 
 function changeOffset() { 
     offset += 12;
@@ -144,3 +116,73 @@ function changeOffset() {
     
     fetchSearchGifs(url);
 }
+
+// ---- ---- ---- ---- ----  ---- ---- ---- ---- ---- ---- ---- ---- ---- -
+// ---- ---- ---- ---- ---- TRENDING TEXT IN SEARCH BAR SECTION ---- ---- ---- ---- ----
+// ---- ---- ---- ---- ----  ---- ---- ---- ---- ---- ---- ---- ---- ---- -
+
+// Fetch trending api
+function endPointTrendingGifsText() {
+    fetch(`https://api.giphy.com/v1/trending/searches?api_key=${APIKEY}`)
+    .then(response => response.json())
+    .then(json => {
+        trendingGifsText = json.data;
+
+        // Create an array of only 5 elements, insert and join in html
+        let arr = trendingGifsText.slice(0, 5);
+        trendingText.innerHTML = arr.join(', ');
+
+        arr.forEach(trending => {
+            let urlTrending = `https://api.giphy.com/v1/gifs/search?api_key=${APIKEY}&limit=12&offset=0&q=${trending}`;
+
+            trending.onclick = () => {
+                fetchSearchGifs(urlTrending)
+            };
+        });
+    })
+    .catch(error => console.error(error));
+};
+
+endPointTrendingGifsText();
+
+//---------------------------------------------------------------------------
+
+// trending.addEventListener('click', () => {
+            //     console.log('hago click');
+            //     fetchSearchGifs(urlTrending);
+            // });
+
+// for (let i = 0; i < arr.length; i++) {
+        //     console.log(arr)
+        //     let urlTrending = `https://api.giphy.com/v1/gifs/search?api_key=${APIKEY}&limit=12&offset=0&q=${arr[i]}`;
+        //     arr[i].addEventListener('click', () => {
+        //         console.log('hago click')
+        //     })
+    //}
+
+// function endPointTrendingGifsText() {
+//     fetch(`https://api.giphy.com/v1/trending/searches?api_key=${APIKEY}`)
+//     .then(response => response.json())
+//     .then(json => {
+//         trendingGifsText = json.data;
+
+//         // Create an array of only 5 elements, insert and join in html
+//         let arr = trendingGifsText.slice(0, 5);
+//         //trendingText.innerHTML = arr.join(', ');
+
+//         arr.forEach(trending => {
+//             let urlTrending = `https://api.giphy.com/v1/gifs/search?api_key=${APIKEY}&limit=12&offset=0&q=${trending}`;
+//             let aTag = document.createElement('a');
+//             // aTag.href = urlTrending;
+//             aTag.textContent = trending;
+//             trendingText.appendChild(aTag);
+
+//             aTag.onclick = () => { 
+//                 aTag.href = urlTrending;
+//                 fetchSearchGifs(urlTrending)
+//             };
+//         });
+//     })
+//     .catch(error => console.error(error));
+// };
+

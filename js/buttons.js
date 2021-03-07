@@ -29,23 +29,24 @@ function changeText() {
 // ---- ---- ---- ---- ----  ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
 
 function addFavorite(gif) {
-  let favorites = JSON.parse(localStorage.getItem('favorites'));
-  let favIndex;
+    let favorites = JSON.parse(localStorage.getItem('favorites'));
+    let favIndex;
 
-  if (!favorites) {
-      favorites = [];
-      favIndex = -1;
-  } else {
-      favIndex = favorites.findIndex(favorites => favorites.id == gif.id);
-  }
+    if (!favorites) {
+        favorites = [];
+        favIndex = -1;
+    } else {
+        favIndex = favorites.findIndex(favorites => favorites.id == gif.id);
+    }
 
-  if (favIndex == -1) {
-      favorites.push(gif);
-  } else {
-      favorites.splice(favIndex, 1);
-  }
+    if (favIndex == -1) {
+        favorites.push(gif);
+    } else {
+        favorites.splice(favIndex, 1);
+        location.reload();
+    }
 
-  localStorage.setItem('favorites',JSON.stringify(favorites));
+    localStorage.setItem('favorites',JSON.stringify(favorites));
 }
 
 // ---- ---- ---- ---- ----  ---- ---- ---- ---- ---- ---- ---- ---- ---- 

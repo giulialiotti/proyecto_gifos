@@ -153,6 +153,10 @@
 
     .input-container {
         width: 38.3%;
+
+        div {
+            justify-content: space-around;
+        }
     }
 
     .home-ilustration {
@@ -175,7 +179,7 @@
 
         .divider {
             width: rem(338px);
-            margin: -10px auto 82px;
+            margin: 55px auto 82px;
             opacity: 0.5;
         }
     }
@@ -184,6 +188,21 @@
         font-size: rem(35px);
         line-height: rem(30px);
         margin-bottom: rem(59px);
+    }
+
+    // ---- ---- ---- ---- ---- SUGGESTIONS LIST ---- ---- ---- ---- ----
+
+    #suggestionsList {
+        margin: 0 auto;
+
+        .suggestions-li {
+            margin: 10px 0 0 0;
+
+            .grey-lupa {
+                margin-right: 14px;
+            }
+        }
+        
     }
 
     // ---- ---- ---- ---- ---- TRENDING SECTION ---- ---- ---- ---- ----
@@ -253,7 +272,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-top: 160px;
+        margin-top: rem(115px);
     }
 
     #closeGallery {
@@ -273,6 +292,7 @@
         #expandedGif {
             width: 100%;
             height: 385px;
+            object-fit: fill;
         }
     }
 

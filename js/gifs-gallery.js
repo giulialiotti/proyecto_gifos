@@ -6,12 +6,6 @@ closeGalleryBtn.addEventListener('click', () => {
     gifsGallery.classList.toggle('hide-gallery');
 });
 
-// function closeGallery() {
-//     gifsGallery.classList.toggle('hide-gallery');
-//     btnLeft.removeEventListener('click');
-//     btnRight.removeEventListener('click');
-// }
-
 // ---- ---- ---- ---- ---- EXPAND GIF ---- ---- ---- ---- ----
 
 function expandGif(gifs, i) {
@@ -43,6 +37,7 @@ function galleryBtns() {
     saveBtn.classList.add('gif-expand-save-btn');
     galleryButtons.append(likeBtn, saveBtn);
     likeBtn.addEventListener('click', () => addFavorite(gif));
+    saveBtn.addEventListener('click', () => downloadGif(url));
 }
 
 galleryBtns();

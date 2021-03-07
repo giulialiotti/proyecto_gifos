@@ -57,21 +57,15 @@
         </div>
 
         <form class="input-container">
-            <input id="searchInput" type="text" placeholder="Busca GIFOS y más"></input>
-            <input id="btnSearch" class="btn-search" type="submit" value=""></input>
+            <div>
+                <input id="searchInput" class="search-input" type="text" placeholder="Busca GIFOS y más" value=""></input>
+                <input id="btnSearch" class="btn-search" type="submit" value=""></input>
+            </div>
+            <ul id="suggestionsList"></ul>
         </form>
-        
-        <div id="suggestionsList">
-            <!-- <ul class="suggestions-ul">
-                <li class="suggestions-li"></li>
-                <li class="suggestions-li"></li>
-                <li class="suggestions-li"></li>
-                <li class="suggestions-li"></li>
-            </ul> -->
-        </div>
 
         <h3 id="trendingTitle">Trending:</h3>
-        <p id="trendingText">Reactions, Entertainment, Sports, Stickers, Artists</p>
+        <p id="trendingText"></p>
 
         <hr class="divider">
 
@@ -149,6 +143,7 @@
     <script src="js/variables.js"></script>
     <script src="js/buttons.js"></script>
     <script src="js/search.js"></script>
+    <script src="js/suggestions-list.js"></script>
     <script src="js/hover.js"></script>
     <script src="js/gifs-gallery.js"></script>
     <script src="js/trending.js"></script>

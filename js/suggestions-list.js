@@ -94,7 +94,7 @@
 //     return console.log(suggestions.data);
 //   } catch (error) {
 //     throw (error)
-//   } 
+//   }
 // }
 
 // // searchSuggestions()
@@ -130,61 +130,44 @@
 //     suggestionsList.innerHTML = `<ul>${content}</ul>`;
 // }
 
-// const inputContainer = document.querySelector('.input-container');
+let searchInput = document.getElementById('searchInput');
+let input;
+const URLSuggestions = `https://api.giphy.com/v1/tags/related/${searchInput}?&api_key=${APIKEY}&limit=4`;
+const URLAutocomplete = `https://api.giphy.com/v1/gifs/search/tags?&api_key=${APIKEY}&q=${input}&limit=4`;
+const suggestionsList = document.getElementById('suggestionsList');
 
-const searchInput = document.getElementById('searchInput');
-const URLSuggestions = "https://api.giphy.com/v1/tags/related/" + searchInput + "?&api_key=" + APIKEY + "&limit=4";
+let suggestions;
 
-function fetchSearchSuggestions(URLSuggestions) {
-  fetch(URLSuggestions)
-  .then(response => response.json())
-  .then(json => {
-    suggestions = json.data;
-    console.log(suggestions);
-  })
-  .catch(error => console.log(error));
+function getSuggestions() {
+  let input = document.getElementById('searchInput').value;
+  fetch(`https://api.giphy.com/v1/gifs/search/tags?&api_key=${APIKEY}&q=${input}&limit=4`)
+    .then(response => response.json())
+    .then(data => {
+      let suggestions = data.data;
+      console.log(suggestions)
+      drawSuggestions(suggestions);
+    })
+    .catch(error => {
+      console.error(error);
+  });
 }
 
-fetchSearchSuggestions(URLSuggestions);
+function drawSuggestions(suggestions) {
+  suggestionsList.innerHTML = '';
+  suggestions.forEach(term => {
+    let li = document.createElement('li');
+    let span = document.createElement('span');
+    li.classList.add('suggestions-li');
+    span.classList.add('grey-lupa');
+    li.innerText = term.name;
+    li.appendChild(span);
+    suggestionsList.appendChild(li);
+  })
+}
 
 searchInput.addEventListener('keyup', () => {
-  let inputText = searchInput.value;
-  //console.log(inputText);
-  drawSuggestions(suggestions);
+  console.log(searchInput.value);
+  let results = suggestions.name.filter(term => term.toLowerCase().includes(searchInput.value))
+  getSuggestions();
+  drawSuggestions(results);
 });
-
-function drawSuggestions(suggestions) {
-  for (let i = 0; i < suggestions.length; i++) {
-    suggestionsList.innerHTML += `
-    <li class="suggestionsLi">${suggestions[i].name}</li>`;
-  }
-};
-
-let suggestionsList = document.getElementById('suggestionsList');
-let suggestionsUl = document.createElement('ul');
-let suggestionsLi = document.querySelector('.suggestionsLi');
-
-suggestionsList.appendChild(suggestionsUl);
-//suggestionsUl.appendChild(suggestionsLi);
-suggestionsUl.classList.add("suggestionsUl");
-
-
-
-// function drawSuggestions(suggestion) {
-//   let suggestionsLi = document.createElement('li');
-//   suggestionsLi.classList.add("suggestionsLi");
-// };
-
-// Codigo fran 
-
-// function suggestions(input){
-//   return fetch ("https://api.giphy.com/v1/tags/related/" + input + "?&api_key=940D6rFjWipAwUmqdskYmMK8wMV036ID")
-//   .then(response => response.json())
-//   .then(data => data)
-//   .catch(error => console.error(error))
-// }
-
-// input.addEventListener("keyup", () =>{
-//   clearSuggestionsContainerContent();
-//   suggestions(input).then(data =>  drawSuggestions(data));
-// })

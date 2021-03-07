@@ -16,11 +16,6 @@ function favoritesGifs() {
         
         showGridFavorites(favorites);
         favoritesGifsLoop(favorites);
-
-        // No funciona
-        // likeBtn.addEventListener('click', () => {
-        //     location.reload();
-        // });
     }
 }
 

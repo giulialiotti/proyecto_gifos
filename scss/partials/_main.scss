@@ -54,9 +54,15 @@ h1 {
 
 input[type="text"] {
     border: none;
+    background: transparent;
     margin-left: 14.7%;
     width: 70%;
     outline: none;
+    font-family: $fontR;
+    font-weight: $regularR;
+    font-size: rem(16px);
+    color: $black;
+    text-align: left;
 
     body.dark & {
         background: $dark;
@@ -80,12 +86,15 @@ input::placeholder {
     margin: 0 auto;
     padding: 13.8px 0;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
+    flex-direction: column;
 
     body.dark & {
         background: $dark;
         border: 1px solid $white;
+    }
+
+    div {
+        display: flex;
     }
 }
 
@@ -152,6 +161,35 @@ input::placeholder {
 
     body.dark & {
         color: $white;
+    }
+}
+
+// ---- ---- ---- ---- ---- SUGGESTIONS LIST ---- ---- ---- ---- ----
+
+#suggestionsList {
+    width: 89.1%;
+    margin: 0 auto;
+
+    .suggestions-li {
+        margin: 10px 7% 0;
+        list-style: none;
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: flex-end;
+        font-family: $fontR;
+        font-weight: $regularR;
+        font-size: rem(16px);
+        color: $gray;
+        text-align: left;
+
+        .grey-lupa {
+            background-image: url('../assets/icon-search-grey.svg');
+            width: 15.8px;
+            height: 15.8px;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin-right: 5px;
+        }
     }
 }
 
@@ -386,6 +424,9 @@ input::placeholder {
     height: 100vh;
     background: rgba(255,255,255,0.90);
     display: block;
+    body.dark & {
+        background: rgba(0, 0, 0, 0.8);
+    }
 }
 
 .hide-gallery {
@@ -423,6 +464,9 @@ input::placeholder {
     font-size: rem(15px);
     color: $black;
     margin-bottom: 3%;
+    body.dark & {
+        color: $white;
+    }
 }
 
 #galleryGifTitle {
@@ -430,6 +474,9 @@ input::placeholder {
     font-weight: $boldM;
     font-size: rem(16px);
     color: $black;
+    body.dark & {
+        color: $white;
+    }
 }
 
 .gif-expand-like-btn {
