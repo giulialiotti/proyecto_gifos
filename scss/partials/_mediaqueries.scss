@@ -433,7 +433,7 @@
                     color: $white;
                 }
             }
-            p {
+            #createGifTextFirstLine, #createGifTextSecondLine {
                 font-family: $fontR;
                 font-size: rem(16px);
                 font-weight: $regularR;
@@ -464,18 +464,10 @@
                 width: rem(32px);
                 height: rem(32px);
                 border-radius: 50%;
-                &:hover {
-                    color: $white;
-                    background-color: $purple;
-                }
 
                 body.dark & {
                     border: 1px solid $white;
                     color: $white;
-                    &:hover {
-                        background-color: $white;
-                        color: $black;
-                    }
                 }
             }
         }
@@ -537,6 +529,7 @@
         animation: move 3s infinite;
         animation-direction: alternate;
     }
+
     @keyframes move {
         0% {
           transform: translate(0);    
@@ -544,10 +537,56 @@
         100% {
           transform: translate(50px);
         }
-      }
+    }
 
-    #video {
+    .video-container {
         width: 480px;
         height: 320px;
+        margin: 0 auto;
+        position: relative;
+
+        #video {
+            width: 100%;
+            height: 100%;
+            margin: 0 auto;
+        }
+
+        .video-hover {
+            width: 480px;
+            height: 320px;
+            opacity: 0.6;
+            background: $purple;
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            .loader-hover {
+                display: block;
+                margin: 0 auto 10px;
+                animation: rotation 5s infinite linear;
+            }
+
+            @keyframes rotation {
+                from {
+                  transform: rotate(0deg);
+                }
+                to {
+                  transform: rotate(359deg);
+                }
+            }
+
+            .video-hover-text {
+                font-family: $fontM;
+                font-weight: $boldM;
+                font-size: rem(15px);
+                color: $white;
+                text-align: center;
+            }
+        }
     }
+    
+    
 }
