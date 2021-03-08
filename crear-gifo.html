@@ -60,9 +60,9 @@
             <div class="square">
                 <div class="square-lines">
                     <div id="createGifText">
-                        <h2>Aquí podrás<br>crear tus propios <span class="aqua-title">GIFOS</span></h2>
-                        <p>¡Crea tu GIFO en sólo 3 pasos!</p>
-                        <p>(sólo necesitas una cámara para grabar un video)</p>
+                        <h2 id="createGifTitle">Aquí podrás<br>crear tus propios <span class="aqua-title">GIFOS</span></h2>
+                        <p id="createGifTextFirstLine">¡Crea tu GIFO en sólo 3 pasos!</p>
+                        <p id="createGifTextSecondLine">(sólo necesitas una cámara para grabar un video)</p>
                     </div>
                     <div>
                         <video id="video" src=""></video>
@@ -73,9 +73,9 @@
             
 
         <div class="page-numbers">
-            <button>1</button>
-            <button>2</button>
-            <button>3</button>
+            <button id="numberOne">1</button>
+            <button id="numberTwo">2</button>
+            <button id="numberThree">3</button>
         </div>
 
         <div class="movieIlustration"></div>
@@ -86,8 +86,16 @@
             <button>COMENZAR</button>
         </div>
 
+        <div id="recordBtn" class="btn-see-more">
+            <button>GRABAR</button>
+        </div>
+
         <div id="stopBtn" class="btn-see-more">
             <button>FINALIZAR</button>
+        </div>
+
+        <div id="uploadBtn" class="btn-see-more">
+            <button>SUBIR GIFO</button>
         </div>
 
     </section>
