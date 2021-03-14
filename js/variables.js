@@ -9,6 +9,11 @@ const navUl = document.getElementById('navUl');
 
 const darkMode = document.getElementById('darkMode');
 
+// ---- ---- ---- ---- ---- SEARCH GIFOS SUGGESTIONS LIST ---- ---- ---- ---- ----
+
+const suggestionsList = document.getElementById('suggestionsList');
+let suggestions;
+
 // ---- ---- ---- ---- ---- SEARCH GIFOS RESULTS ---- ---- ---- ---- ----
 
 const btnSeeMore = document.getElementById('btn-see-more');

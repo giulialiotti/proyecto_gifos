@@ -1,3 +1,4 @@
+// Video
 const video = document.getElementById('video');
 const videoContainer = document.querySelector('.video-container');
 
@@ -18,8 +19,12 @@ const numberOne = document.getElementById('numberOne')
 const numberTwo = document.getElementById('numberTwo')
 const numberThree = document.getElementById('numberThree')
 
-// Recorder
+// Upload endpoint
+let uploadUrl = `https://upload.giphy.com/v1/gifs?api_key=${APIKEY}`;
+
+// Recorder and blob
 let recorder;
+let blob;
 
 // ---- ---- ---- ---- ---- CAMARA FUNCTIONALITY ---- ---- ---- ---- ----
 
@@ -88,20 +93,19 @@ stopBtn.addEventListener('click', () => {
 
     // Stop recording gif
     recorder.stopRecording( () => {
-        let blob = recorder.getBlob();
+        blob = recorder.getBlob();
         let url = window.URL.createObjectURL(blob);
         console.log(url);
         //video.src = url;
     });    
 })
 
-let form = new FormData();
-form.append('file', recorder.getBlob(), 'myGif.gif');
-console.log(form.get('file'));
-
-let uploadUrl = `https://www.upload.giphy.com/v1/gifs?api_key=${APIKEY}`;
-
+// Upload created gif to giphy
 async function uploadGif() {
+    let form = new FormData();
+    form.append('file', blob, 'myGif.gif');
+    console.log(form.get('file'));
+
     let resp = await fetch(uploadUrl, { method: "POST", body: form });
     let data = await resp.json();
 
@@ -119,19 +123,12 @@ uploadBtn.addEventListener('click', () => {
     // Show uploading hover on gif
     videoHover();
 
-    // Upload gif 
+    // Upload gif, save it to local storage and show success hover
     uploadGif().then(data => {
         localStorage.setItem('myGifs', JSON.stringify(data));
-        disableVideoHover();
         successHover();
     });
 })
-
-function uploadedGif(data) {
-    localStorage.setItem('myGifs', JSON.stringify(data));
-    disableVideoHover();
-    successHover();
-}
 
 // ---- ---- ---- ---- ---- FUNCTIONS ---- ---- ---- ---- ----
 
@@ -154,6 +151,7 @@ function changeNumberColorBack(number) {
     number.style.background = "#FFFFFF";
 }
 
+// Create hover over gif while uploading
 function videoHover() {
     let div = document.createElement('div');
     let img = document.createElement('img');
@@ -170,11 +168,9 @@ function videoHover() {
     div.append(img, text);
 }
 
-function disableVideoHover() {
-    window.videoHover = function(){};
-}
-
+// Create hover over gif when uploading was successful
 function successHover() {
+    videoContainer.innerHTML = "";
     let div = document.createElement('div');
     let img = document.createElement('img');
     let text = document.createElement('p');

@@ -4,7 +4,7 @@
 
 function drawHoverGif(gifs, i, div) {
     let gif = gifs[i];
-    let url = gif.images.original.url;
+    let url = gif.images.downsized.url;
 
     let hover = document.createElement('div');
 

@@ -127,30 +127,36 @@ function endPointTrendingGifsText() {
     .then(response => response.json())
     .then(json => {
         trendingGifsText = json.data;
-
         // Create an array of only 5 elements, insert and join in html
         let arr = trendingGifsText.slice(0, 5);
-        trendingText.innerHTML = arr.join(', ');
-
-        arr.forEach(trending => {
-            let urlTrending = `https://api.giphy.com/v1/gifs/search?api_key=${APIKEY}&limit=12&offset=0&q=${trending}`;
-
-            trending.onclick = () => {
-                fetchSearchGifs(urlTrending)
-            };
-        });
+        drawTrendingText(arr);
+        eventTrending(arr);
     })
     .catch(error => console.error(error));
 };
 
 endPointTrendingGifsText();
 
-//---------------------------------------------------------------------------
+function drawTrendingText(arr) {
+    arr.forEach((trending, i) => {
+        let span = document.createElement('span');
+        let text = trending;
+        if (i < arr.length-1) text += ", "
+        span.textContent = text;
+        trendingText.appendChild(span);  
+    });
+}   
 
-// trending.addEventListener('click', () => {
-            //     console.log('hago click');
-            //     fetchSearchGifs(urlTrending);
-            // });
+function eventTrending(trending) {
+    trending.addEventListener('click', () => {
+        let urlTrending = `https://api.giphy.com/v1/gifs/search?api_key=${APIKEY}&limit=12&offset=0&q=${trending}`;
+        console.log('hago click');
+        fetchSearchGifs(urlTrending);
+    });
+}
+ 
+
+//---------------------------------------------------------------------------              
 
 // for (let i = 0; i < arr.length; i++) {
         //     console.log(arr)

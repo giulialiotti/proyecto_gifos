@@ -70,7 +70,7 @@ function downloadGif(url) {
 // ---- ---- ---- ---- ----  ---- ---- ---- ---- ---- ---- ---- ---- ---- 
 // ---- ---- ---- ---- ---- CHANGE LUPA TO CROSS ---- ---- ---- ---- ---- 
 // ---- ---- ---- ---- ----  ---- ---- ---- ---- ---- ---- ---- ---- ---- 
-
+// Poner dentro de una funcion y llamarla
 if (searchInput.value === "") {
     btnSearch.style.backgroundImage = "url('../assets/icon-search.svg')";
     btnSearch.addEventListener("click", ev => {

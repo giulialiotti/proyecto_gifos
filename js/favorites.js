@@ -31,7 +31,7 @@ function drawFavorites(favorites, i) {
     let div = document.createElement("div");
     let img = document.createElement("img");
 
-    img.src = favorites[i].images.original.url;
+    img.src = favorites[i].images.downsized.url;
     img.alt = favorites[i].title;
 
     div.classList.add('gif-container');
@@ -57,7 +57,7 @@ function showGridFavorites(favorites) {
         }
         currentIndex += 12;
         
-        // If there's no more favorites hide the see more button
+        // If there's no more favorites hide see more button
         if (currentIndex >= favorites.length) {
             btnSeeMore.style.display = 'none';
         }
