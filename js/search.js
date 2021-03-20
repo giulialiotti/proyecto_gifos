@@ -13,13 +13,6 @@ function searchResults() {
 
   // Fetch searched term and draw results
   fetchSearchGifs(url).then((gifs) => gifsLoop(gifs));
-
-  // Show title from search on top of grid
-  changeTitleSearchResults(inputText);
-
-  // Save input value in local storage and erase it from input
-  localStorage.setItem("inputValue", JSON.stringify(inputText));
-  document.querySelector("#searchInput").value = "";
 }
 
 // ---- ---- ---- ---- ---- FETCH API SEARCH GIFS ---- ---- ---- ---- ----

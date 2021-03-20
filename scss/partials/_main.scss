@@ -55,7 +55,7 @@ h1 {
 input[type="text"] {
     border: none;
     background: transparent;
-    margin-left: 14.7%;
+    margin-left: 22%;
     //width: 70%;
     outline: none;
     font-family: $fontR;
@@ -196,7 +196,13 @@ input::placeholder {
 }
 
 #insertLupa {
-    margin-left: 16%;
+    padding-left: 23.5%;
+    background-image: url(../assets/icon-search-grey.svg);
+    width: 15.8px;
+    height: 15.8px;
+    background-repeat: no-repeat;
+    background-position: right;
+    margin-right: 5px;
 }
 
 input[type="text"].active-search {

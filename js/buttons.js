@@ -67,39 +67,57 @@ function downloadGif(url) {
     });
 }
 
-// ---- ---- ---- ---- ----  ---- ---- ---- ---- ---- ---- ---- ---- ---- 
-// ---- ---- ---- ---- ---- CHANGE LUPA TO CROSS ---- ---- ---- ---- ---- 
-// ---- ---- ---- ---- ----  ---- ---- ---- ---- ---- ---- ---- ---- ---- 
-// Poner dentro de una funcion y llamarla
-if (searchInput.value === "") {
+// ---- ---- ---- ---- ----  ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- 
+// ---- ---- ---- ---- ---- MAGNIFYING GLASS AND INPUT CHANGES ---- ---- ---- ---- ---- 
+// ---- ---- ---- ---- ----  ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- 
+
+insertLupa.style.display = "none";
+
+// If suggestions list is active magnifying glass appears next to input container
+function lupaChanges() {
+    if (searchInput.value !== "") {
+        insertLupa.style.display = "block";
+        insertLupa.classList.add('grey-lupa-input');
+        searchInput.classList.add('active-search');
+        eventOnCross();
+        eventOnGrayLupa();
+    } else {
+        clearInput();
+    }
+}
+
+// Remove gray magnifying glass next to input, eliminate class and chage cross back to magnifying glass
+function clearInput() {
+    insertLupa.style.display = "none";
+    searchInput.classList.remove('active-search');
     btnSearch.style.backgroundImage = "url('../assets/icon-search.svg')";
-    btnSearch.addEventListener("click", ev => {
-        ev.preventDefault();
-        searchResults();
-        suggestionsList.innerHTML = '';
-    });
-} else {
+}
+
+// Function of event that on click clears field
+function eventOnCross() {
     btnSearch.style.backgroundImage = "url('../assets/close.svg')";
     btnSearch.addEventListener("click", ev => {
         ev.preventDefault();
         searchInput.value = "";
         suggestionsList.innerHTML = '';
+        clearInput();
     });
 }
 
-// ---- ---- ---- ---- ---- ADD LUPA NEXT TO INPUT ---- ---- ---- ---- ----
+// Function of event when click on gray magnifying glass next to input
+function eventOnGrayLupa() {
+    insertLupa.addEventListener("click", () => {
+        // Clear suggestions list
+        suggestionsList.innerHTML = '';
 
-function lupaChanges() {
-  let insertLupa = document.getElementById('insertLupa');  
-  insertLupa.style.visibility = "visible";
-  let span = document.createElement('span');
-  span.classList.add('grey-lupa-input', 'grey-lupa');
-  insertLupa.appendChild(span);
-  searchInput.classList.add('active-search');
-}
+        clearInput();
+        searchResults();
 
-if (searchInput.value === "") {
-    insertLupa.style.visibility= "hidden";
-} else {
-    lupaChanges();
+        // Get input text from local storage to use as title on results grid
+        let inputText = JSON.parse(localStorage.getItem('inputValue'));
+        changeTitleSearchResults(inputText);
+
+        // Empty input
+        searchInput.value = "";
+    });
 }

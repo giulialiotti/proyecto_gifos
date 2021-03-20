@@ -16,6 +16,9 @@ function drawSuggestions() {
   // Empty the list before drawing
   suggestionsList.innerHTML = '';
 
+  // Show magnifying glass next to input
+  lupaChanges();
+
   getSuggestions().then( data => {
     let suggestions = data.data;
 
@@ -43,6 +46,7 @@ function drawSuggestions() {
 // While user is typing show the suggestions list
 searchInput.addEventListener('keyup', () => {
   console.log(searchInput.value);
+  localStorage.setItem("inputValue", JSON.stringify(searchInput.value));
   drawSuggestions();
 });
 
@@ -61,4 +65,5 @@ function selectItem(item) {
     changeTitleSearchResults(item.name);
   });
   suggestionsList.innerHTML = '';
+  clearInput();
 }

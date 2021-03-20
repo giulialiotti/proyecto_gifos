@@ -11,6 +11,7 @@ const darkMode = document.getElementById('darkMode');
 
 // ---- ---- ---- ---- ---- SEARCH GIFOS SUGGESTIONS LIST ---- ---- ---- ---- ----
 
+let insertLupa = document.getElementById('insertLupa');
 const suggestionsList = document.getElementById('suggestionsList');
 let suggestions;
 
@@ -60,3 +61,4 @@ let offset = 0;
 
 let btnLeftTrending = document.querySelector('.btn-left-trending');
 let btnRightTrending = document.querySelector('.btn-right-trending');
+
