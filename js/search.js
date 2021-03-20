@@ -139,6 +139,7 @@ function drawTrendingText(trendings) {
     // Add a coma after first four elements
     if (i < trendings.length - 1) text += ", ";
 
+    span.classList.add('trending-topic');
     span.textContent = text;
     trendingText.appendChild(span);
 
