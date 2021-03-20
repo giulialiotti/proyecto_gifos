@@ -6,14 +6,7 @@
 hideSearchInactive();
 
 function searchResults() {
-  // Hide in desktop and show in mobile trending topics
-  hideTrendingText();
-
-  // Clean grid search results
-  searchResultsGifs.innerHTML = "";
-
-  // Show grid
-  showSearchActive();
+  hideAndShowElements();
 
   let inputText = document.getElementById("searchInput").value;
   let url = `https://api.giphy.com/v1/gifs/search?api_key=${APIKEY}&limit=12&offset=0&q=${inputText}`;
@@ -30,18 +23,6 @@ function searchResults() {
 }
 
 // ---- ---- ---- ---- ---- FETCH API SEARCH GIFS ---- ---- ---- ---- ----
-
-// function fetchSearchGifs(url) {
-//     fetch(url)
-//       .then(response => response.json())
-//       .then(content => {
-//         let gifs = content.data;
-//         gifsLoop(gifs);
-//       })
-//       .catch(err => {
-//         console.error(err);
-//       });
-// }
 
 async function fetchSearchGifs(url) {
   let response = await fetch(url);
@@ -73,6 +54,17 @@ function gifsLoop(gifs) {
 }
 
 // ---- ---- ---- ---- ---- HIDE AND SHOW ITEMS ---- ---- ---- ---- ----
+
+function hideAndShowElements() {
+  // Hide in desktop and show in mobile trending topics
+  hideTrendingText();
+
+  // Clean grid search results
+  searchResultsGifs.innerHTML = "";
+
+  // Show grid
+  showSearchActive();
+}
 
 // Hide in desktop and show in mobile trending title and topics
 function hideTrendingText() {
@@ -147,20 +139,38 @@ endPointTrendingGifsText().then((trendings) => drawTrendingText(trendings));
 function drawTrendingText(trendings) {
   // Loop through trendings array
   trendings.forEach((trending, i) => {
-    // Create and asign a span for each trendig topic
+    // Create a span for each trendig topic
     let span = document.createElement("span");
     let text = trending;
-    span.textContent = text;
-    trendingText.appendChild(span);
 
     // Add a coma after first four elements
     if (i < trendings.length - 1) text += ", ";
 
+    span.textContent = text;
+    trendingText.appendChild(span);
+
     // When click on a topic fetch item and show results
     span.addEventListener("click", () => {
-      let urlTrending = `https://api.giphy.com/v1/gifs/search?api_key=${APIKEY}&limit=12&offset=0&q=${trending}`;
-      fetchSearchGifs(urlTrending).then((gifs) => gifsLoop(gifs));
-      console.log(urlTrending);
+      let urlTrending = `https://api.giphy.com/v1/gifs/search?api_key=${APIKEY}&limit=12&offset=${offset}&q=${trending}`;
+      fetchSearchGifs(urlTrending).then(gifs => {
+        hideAndShowElements();
+
+        // Draw gifs on grid
+        gifsLoop(gifs);
+
+        // Show title from search on top of grid
+        changeTitleSearchResults(trending);
+      });
     });
   });
+  
+}
+
+// No funciona
+  //btnSeeMore.addEventListener("click", offsetTrending(trending));
+function offsetTrending(trending) {
+  console.log("hago click")
+  offset += 12;
+  urlTrending = `https://api.giphy.com/v1/gifs/search?api_key=${APIKEY}&limit=12&offset=${offset}&q=${trending}`;
+  fetchSearchGifs(urlTrending);
 }
