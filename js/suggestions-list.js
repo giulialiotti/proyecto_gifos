@@ -52,5 +52,13 @@ function selectItem(item) {
   searchInput.innerText = item.name;
   let urlItem = `https://api.giphy.com/v1/gifs/search?api_key=${APIKEY}&limit=12&offset=0&q=${item.name}`;
   console.log(urlItem);
-  fetchSearchGifs(urlItem);
+  fetchSearchGifs(urlItem).then(gifs => {
+    document.querySelector("#searchInput").value = "";
+    hideAndShowElements();
+    // Draw gifs on grid
+    gifsLoop(gifs);
+    // Show title from search on top of grid
+    changeTitleSearchResults(item.name);
+  });
+  suggestionsList.innerHTML = '';
 }

@@ -76,12 +76,14 @@ if (searchInput.value === "") {
     btnSearch.addEventListener("click", ev => {
         ev.preventDefault();
         searchResults();
+        suggestionsList.innerHTML = '';
     });
 } else {
     btnSearch.style.backgroundImage = "url('../assets/close.svg')";
     btnSearch.addEventListener("click", ev => {
         ev.preventDefault();
         searchInput.value = "";
+        suggestionsList.innerHTML = '';
     });
 }
 
