@@ -88,11 +88,6 @@ function showSearchActive() {
   titleSearchResult.style.display = "block";
   searchResultsGifs.style.display = "grid";
   btnSeeMore.style.display = "flex";
-
-  // // See more button: when clicked show 12 more gifs
-  // btnSeeMore.addEventListener("click", () => {
-  //   console.log("hago click")
-  // });
 }
 
 // ---- ---- ---- ---- ---- SEARCH TITLE ON GRID ---- ---- ---- ---- ----
@@ -145,17 +140,10 @@ function drawTrendingText(trendings) {
 
         // Show title from search on top of grid
         changeTitleSearchResults(trending);
+
+        //See more button: when clicked show 12 more gifs
+        eventSeeMoreButton(trending);
       });
     });
-  });
-  
-}
-
-// No funciona
-  //btnSeeMore.addEventListener("click", offsetTrending(trending));
-function offsetTrending(trending) {
-  console.log("hago click")
-  offset += 12;
-  urlTrending = `https://api.giphy.com/v1/gifs/search?api_key=${APIKEY}&limit=12&offset=${offset}&q=${trending}`;
-  fetchSearchGifs(urlTrending);
+  }); 
 }
