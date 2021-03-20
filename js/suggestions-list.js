@@ -52,10 +52,9 @@ searchInput.addEventListener('keyup', () => {
 
 // Select each item on the suggestions list and fetch endpoint to show gifs results 
 function selectItem(item) {
-  console.log(item.name)
   searchInput.innerText = item.name;
   let urlItem = `https://api.giphy.com/v1/gifs/search?api_key=${APIKEY}&limit=12&offset=0&q=${item.name}`;
-  console.log(urlItem);
+
   fetchSearchGifs(urlItem).then(gifs => {
     document.querySelector("#searchInput").value = "";
     hideAndShowElements();
@@ -64,6 +63,10 @@ function selectItem(item) {
     // Show title from search on top of grid
     changeTitleSearchResults(item.name);
   });
+  
   suggestionsList.innerHTML = '';
   clearInput();
+
+  //See more button: when clicked show 12 more gifs
+  eventSeeMoreButton(item.name);
 }

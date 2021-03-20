@@ -119,5 +119,20 @@ function eventOnGrayLupa() {
 
         // Empty input
         searchInput.value = "";
+
+        //See more button: when clicked show 12 more gifs
+        eventSeeMoreButton(inputText);
+    });
+}
+
+// Add 12 more gifs on grid every time user clicks on see more button 
+function eventSeeMoreButton(inputText) {
+    btnSeeMore.addEventListener("click", () => {
+        offset += 12;
+        let urlSearchEndpoint = `https://api.giphy.com/v1/gifs/search?api_key=${APIKEY}&limit=12&offset=${offset}&q=${inputText}`;
+        console.log(urlSearchEndpoint);
+        fetchSearchGifs(urlSearchEndpoint).then((gifs) => {
+            gifsLoop(gifs)
+        });
     });
 }

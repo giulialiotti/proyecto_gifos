@@ -7,12 +7,14 @@ hideSearchInactive();
 
 function searchResults() {
   hideAndShowElements();
-
+  
   let inputText = document.getElementById("searchInput").value;
-  let url = `https://api.giphy.com/v1/gifs/search?api_key=${APIKEY}&limit=12&offset=0&q=${inputText}`;
+  let urlSearchEndpoint = `https://api.giphy.com/v1/gifs/search?api_key=${APIKEY}&limit=12&offset=${offset}&q=${inputText}`;
 
   // Fetch searched term and draw results
-  fetchSearchGifs(url).then((gifs) => gifsLoop(gifs));
+  fetchSearchGifs(urlSearchEndpoint).then((gifs) => {
+    gifsLoop(gifs)
+  });
 }
 
 // ---- ---- ---- ---- ---- FETCH API SEARCH GIFS ---- ---- ---- ---- ----
@@ -87,27 +89,16 @@ function showSearchActive() {
   searchResultsGifs.style.display = "grid";
   btnSeeMore.style.display = "flex";
 
-  // See more button: when clicked show 12 more gifs
-  btnSeeMore.addEventListener("click", changeOffset);
+  // // See more button: when clicked show 12 more gifs
+  // btnSeeMore.addEventListener("click", () => {
+  //   console.log("hago click")
+  // });
 }
 
 // ---- ---- ---- ---- ---- SEARCH TITLE ON GRID ---- ---- ---- ---- ----
 
 function changeTitleSearchResults(inputText) {
   titleSearchResult.innerHTML = inputText;
-}
-
-// ---- ---- ---- ---- ----  ---- ---- ---- ---- ---- ---- ---- ---- ----
-// ---- ---- ---- ---- ---- SEE MORE BUTTON ---- ---- ---- ---- ----
-// ---- ---- ---- ---- ----  ---- ---- ---- ---- ---- ---- ---- ---- ----
-
-function changeOffset() {
-  offset += 12;
-
-  let inputText = JSON.parse(localStorage.getItem("inputValue"));
-  const url = `https://api.giphy.com/v1/gifs/search?api_key=${APIKEY}&limit=12&offset=${offset}&q=${inputText}`;
-
-  fetchSearchGifs(url);
 }
 
 // ---- ---- ---- ---- ----  ---- ---- ---- ---- ---- ---- ---- ---- ---- -
