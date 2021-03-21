@@ -6,7 +6,7 @@ const myGifosText = document.querySelector('.my-gifos-text');
 myGifosGrid.style.display = "none";
 seeMoreMyGifos.style.display = "none";
 
-let gifos = JSON.parse(localStorage.getItem('myGifs'));
+let gifos = JSON.parse(localStorage.getItem('gifosList'));
 
 function myGifos() {
     
@@ -17,33 +17,33 @@ function myGifos() {
         iconMyGifos.style.display = "none";
         myGifosText.style.display = "none";
         
-        showGifosGrid();
-        drawGifos();
+        myGifosGrid.style.display = "grid";
+        drawGifos(gifos);
     }
 }
 
 myGifos();
 
-function showGifosGrid() {
-    myGifosGrid.style.display = "grid";
-    seeMoreMyGifos.style.display = "flex";
-    // seeMoreMyGifos.addEventListener('click', () => {
-    //     for (let i = currentIndex; i < currentIndex + 12; i++) {
-    //         if (gifos[i]) {
-    //             drawGifos();
-    //         }
-    //     }
-    //     currentIndex += 12;
+// function showGifosGrid(gifos) {
+//     myGifosGrid.style.display = "grid";
+//     seeMoreMyGifos.style.display = "flex";
+//     seeMoreMyGifos.addEventListener('click', () => {
+//         for (let i = currentIndex; i < currentIndex + 12; i++) {
+//             if (gifos[i]) {
+//                 drawGifos();
+//             }
+//         }
+//         currentIndex += 12;
         
-    //     // If there's no more favorites hide see more button
-    //     if (currentIndex >= favorites.length) {
-    //         seeMoreMyGifos.style.display = 'none';
-    //     }
-    // });
-}
+//         // If there's no more favorites hide see more button
+//         if (currentIndex >= gifos.length) {
+//             seeMoreMyGifos.style.display = 'none';
+//         }
+//     });
+// }
 
-function drawGifos() {
-    for (let i = 0; gifos.length < 12; i++) {
+function drawGifos(gifos) {
+    for (let i = 0; i < gifos.length; i++) {
         let div = document.createElement("div");
         let img = document.createElement("img");
     
