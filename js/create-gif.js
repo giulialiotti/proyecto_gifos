@@ -235,4 +235,5 @@ function successHover(url) {
     div.append(btnsContainer, img, text);
 
     saveBtn.addEventListener('click', () =>  downloadGif(url));
+    linkBtn.addEventListener('click', () =>  getLink(url));
 }

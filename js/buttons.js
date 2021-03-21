@@ -49,6 +49,14 @@ function addFavorite(gif) {
     localStorage.setItem('favorites',JSON.stringify(favorites));
 }
 
+// ---- ---- ---- ---- ----  ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+// ---- ---- ---- ---- ---- GET LINK OF CREATED GIF BUTTON ---- ---- ---- ---- ---- 
+// ---- ---- ---- ---- ----  ---- ---- ---- ---- ---- ---- ---- ---- ---- ---- ----
+
+function getLink(url) {
+    window.alert("El enlace del gifo creado es: " + url);
+}
+
 // ---- ---- ---- ---- ----  ---- ---- ---- ---- ---- ---- ---- ---- ---- 
 // ---- ---- ---- ---- ---- BUTTON DOWNLOAD GIF ---- ---- ---- ---- ---- 
 // ---- ---- ---- ---- ----  ---- ---- ---- ---- ---- ---- ---- ---- ---- 
