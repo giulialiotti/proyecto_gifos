@@ -36,7 +36,7 @@ async function initializeCamara() {
     return stream;
 }
 
-// ---- ---- ---- ---- ---- EVENT LISTENERS BUTTONS ---- ---- ---- ---- ----
+// ---- ---- ---- ---- ---- EVENT LISTENERS: BEGIN, RECORD AND STOP BUTTONS ---- ---- ---- ---- ----
 
 videoContainer.style.display = "none";
 recordBtn.style.display = "none";
@@ -100,6 +100,8 @@ stopBtn.addEventListener('click', () => {
     });    
 })
 
+// ---- ---- ---- ---- ---- ---- UPLOAD PROCESS ---- ---- ---- ---- ---- ----
+
 // Upload created gif to giphy
 async function uploadGif() {
     let form = new FormData();
@@ -112,6 +114,15 @@ async function uploadGif() {
     return data;
 }
 
+// Fetch endopint and bring created gifs
+async function getGifos(id) {
+    let response = await fetch(`https://api.giphy.com/v1/gifs/${id}?api_key=${APIKEY}`);
+    let content = await response.json();
+
+    return content;
+}
+
+// Event on upload button
 uploadBtn.addEventListener('click', () => {
     // Change numbers
     changeNumberColorBack(numberTwo);
@@ -125,7 +136,18 @@ uploadBtn.addEventListener('click', () => {
 
     // Upload gif, save it to local storage and show success hover
     uploadGif().then(data => {
-        localStorage.setItem('myGifs', JSON.stringify(data));
+        let gifId = data.data.id;
+
+        getGifos(gifId).then(content => {
+            console.log(content);
+
+            let gifos = [];
+            var createdGif =  JSON.parse(localStorage.getItem('myGifs'));
+            gifos = [content.data];
+            gifos.push(createdGif);
+            localStorage.setItem('myGifs', JSON.stringify(gifos));
+        });
+        
         successHover();
     });
 })
@@ -179,7 +201,7 @@ function successHover() {
     text.innerText = "GIFO subido con éxito";
     
     div.classList.add('video-hover');
-    img.classList.add('loader-hover');
+    img.classList.add('succes-hover');
     text.classList.add('video-hover-text');
 
     videoContainer.append(div);

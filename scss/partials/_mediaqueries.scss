@@ -569,6 +569,11 @@
                 animation: rotation 5s infinite linear;
             }
 
+            .succes-hover {
+                display: block;
+                margin: 0 auto 10px;
+            }
+
             @keyframes rotation {
                 from {
                   transform: rotate(0deg);

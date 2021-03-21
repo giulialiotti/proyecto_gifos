@@ -61,4 +61,3 @@ let offset = 0;
 
 let btnLeftTrending = document.querySelector('.btn-left-trending');
 let btnRightTrending = document.querySelector('.btn-right-trending');
-
