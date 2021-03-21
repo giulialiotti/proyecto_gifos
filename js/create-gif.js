@@ -137,10 +137,16 @@ uploadBtn.addEventListener('click', () => {
     // Upload gif, save it to local storage and show success hover
     uploadGif().then(data => {
         let gifId = data.data.id;
+        
 
         getGifos(gifId).then(content => {
             console.log(content);
+            
+            // Define url for download button and uploaded gif hover
+            let url = content.data.images.original.url;
+            successHover(url);
 
+            // Save created gifs to local storage
             let obj = content.data;
             let gifosList = JSON.parse(localStorage.getItem('gifosList'));
             let gifosIndex;
@@ -161,8 +167,8 @@ uploadBtn.addEventListener('click', () => {
 
             localStorage.setItem('gifosList', JSON.stringify(gifosList));
         });
+
         
-        successHover();
     });
 })
 
@@ -205,7 +211,7 @@ function videoHover() {
 }
 
 // Create hover over gif when uploading was successful
-function successHover() {
+function successHover(url) {
     videoContainer.innerHTML = "";
     let div = document.createElement('div');
     let img = document.createElement('img');
@@ -227,4 +233,6 @@ function successHover() {
     videoContainer.append(div);
     btnsContainer.append(saveBtn, linkBtn);
     div.append(btnsContainer, img, text);
+
+    saveBtn.addEventListener('click', () =>  downloadGif(url));
 }
