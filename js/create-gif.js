@@ -140,12 +140,26 @@ uploadBtn.addEventListener('click', () => {
 
         getGifos(gifId).then(content => {
             console.log(content);
+            
+            let obj = content.data;
+            let gifosList = JSON.parse(localStorage.getItem('gifosList'));
+            let gifosIndex;
 
-            let gifos = [];
-            var createdGif =  JSON.parse(localStorage.getItem('myGifs'));
-            gifos = [content.data];
-            gifos.push(createdGif);
-            localStorage.setItem('myGifs', JSON.stringify(gifos));
+            if (!gifosList) {
+                gifosList = [];
+                gifosIndex = -1;
+            } else {
+                gifosIndex = gifosList.findIndex(gifosList => gifosList.id == obj.id);
+            }
+
+            if (gifosIndex == -1) {
+                gifosList.push(obj);
+            } else {
+                gifosList.splice(gifosIndex, 1);
+                location.reload();
+            }
+
+            localStorage.setItem('gifosList', JSON.stringify(gifosList));
         });
         
         successHover();
