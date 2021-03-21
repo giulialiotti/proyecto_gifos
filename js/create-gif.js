@@ -140,7 +140,7 @@ uploadBtn.addEventListener('click', () => {
 
         getGifos(gifId).then(content => {
             console.log(content);
-            
+
             let obj = content.data;
             let gifosList = JSON.parse(localStorage.getItem('gifosList'));
             let gifosIndex;
@@ -210,6 +210,9 @@ function successHover() {
     let div = document.createElement('div');
     let img = document.createElement('img');
     let text = document.createElement('p');
+    let btnsContainer = document.createElement('div');
+    let saveBtn = document.createElement('div');
+    let linkBtn = document.createElement('div');
 
     img.src = "../assets/check.svg";
     text.innerText = "GIFO subido con éxito";
@@ -217,7 +220,11 @@ function successHover() {
     div.classList.add('video-hover');
     img.classList.add('succes-hover');
     text.classList.add('video-hover-text');
+    btnsContainer.classList.add('video-hover-btns-container');
+    saveBtn.classList.add('video-hover-save-btn');
+    linkBtn.classList.add('video-hover-link-btn');
 
     videoContainer.append(div);
-    div.append(img, text);
+    btnsContainer.append(saveBtn, linkBtn);
+    div.append(btnsContainer, img, text);
 }

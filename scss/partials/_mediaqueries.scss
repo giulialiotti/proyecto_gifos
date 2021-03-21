@@ -590,6 +590,41 @@
                 color: $white;
                 text-align: center;
             }
+
+            .video-hover-btns-container {
+                display: flex;
+                position: absolute;
+                top: 11px;
+                right: 12px;
+
+               .video-hover-save-btn {
+                    background-image: url('../assets/icon-download.svg');
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    height: 32px;
+                    width: 32px;
+                    border: 1px solid rgba(156, 175, 195, 0.5);
+                    border-radius: 6px;
+                    margin-left: 10px;
+                    &:hover {
+                        background-image: url('../assets/icon-download-hover.svg');
+                    }
+                } 
+
+                .video-hover-link-btn {
+                    background-image: url('../assets/icon-link-normal.svg');
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    height: 32px;
+                    width: 32px;
+                    border: 1px solid rgba(156, 175, 195, 0.5);
+                    border-radius: 6px;
+                    margin-left: 10px;
+                    &:hover {
+                        background-image: url('../assets/icon-link-hover.svg');
+                    }
+                }
+            }    
         }
     }
     
