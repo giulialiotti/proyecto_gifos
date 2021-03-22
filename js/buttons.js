@@ -99,6 +99,7 @@ function clearInput() {
     insertLupa.style.display = "none";
     searchInput.classList.remove('active-search');
     btnSearch.style.backgroundImage = "url('../assets/icon-search.svg')";
+    suggestionsList.removeChild(hr);
 }
 
 // Function of event that on click clears field
