@@ -99,12 +99,12 @@ function lupaChanges(hr) {
 function clearInput() {
     insertLupa.style.display = "none";
     searchInput.classList.remove('active-search');
-    btnSearch.style.backgroundImage = "url('/assets/icon-search.svg')";
+    btnSearch.style.backgroundImage = "url('./assets/icon-search.svg')";
 }
 
 // Function of event that on click clears field
 function eventOnCross() {
-    btnSearch.style.backgroundImage = "url('/assets/close.svg')";
+    btnSearch.style.backgroundImage = "url('./assets/close.svg')";
     btnSearch.addEventListener("click", ev => {
         ev.preventDefault();
         searchInput.value = "";
