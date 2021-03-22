@@ -122,6 +122,8 @@ stopBtn.addEventListener('click', () => {
 
 // Upload created gif to giphy
 async function uploadGif() {
+    repeatCaption.style.display = "none";
+    
     let form = new FormData();
     form.append('file', blob, 'myGif.gif');
     console.log(form.get('file'));
