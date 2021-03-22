@@ -175,6 +175,7 @@
 
         p {
             margin-bottom: rem(95px);
+            padding: 0;
         }
 
         .divider {
@@ -376,36 +377,6 @@
             line-height: rem(25px);
             margin: 40px auto 136px;
             padding: 0;
-        }
-    }
-
-    // ---- ---- ---- ---- ---- FOOTER ---- ---- ---- ---- ----
-
-    footer {
-        display: flex;
-        justify-content: space-between;
-        padding: 49.5px 0;
-    
-        .social-media {
-            display: flex;
-            margin: 0 0 0 10.8%;
-        
-            .share-text {
-                margin: 0;
-            }
-
-            ul {
-            padding: 0;
-            margin: 0;
-
-                li {
-                    margin-left: rem(17px);
-                }
-            }
-        }
-
-        .copy-text {
-            margin: 0 11% 0 0;
         }
     }
 
