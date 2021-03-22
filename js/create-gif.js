@@ -15,9 +15,15 @@ let createGifTextFirstLine = document.getElementById('createGifTextFirstLine');
 let createGifTextSecondLine = document.getElementById('createGifTextSecondLine');
 
 // Numbers
-const numberOne = document.getElementById('numberOne')
-const numberTwo = document.getElementById('numberTwo')
-const numberThree = document.getElementById('numberThree')
+const numberOne = document.getElementById('numberOne');
+const numberTwo = document.getElementById('numberTwo');
+const numberThree = document.getElementById('numberThree');
+
+// Timer
+let timer = document.getElementById('timer');
+let minutes = document.getElementById('minutes');
+let seconds = document.getElementById('seconds');
+let totalSeconds = 0;
 
 // Upload endpoint
 let uploadUrl = `https://upload.giphy.com/v1/gifs?api_key=${APIKEY}`;
@@ -42,6 +48,7 @@ videoContainer.style.display = "none";
 recordBtn.style.display = "none";
 stopBtn.style.display = "none";
 uploadBtn.style.display = "none";
+timer.style.display = "none";
 
 beginBtn.addEventListener('click', () => {
     // Change text 
@@ -84,12 +91,17 @@ recordBtn.addEventListener('click', () => {
 
     // Start recording gif
     recorder.startRecording();
+
+    // Show timer and start counting
+    timer.style.display = "flex";
+    setInterval(setTime, 1000);
 })
 
 stopBtn.addEventListener('click', () => {
     // Hide and show buttons
     stopBtn.style.display = "none";
     uploadBtn.style.display = "flex";
+    timer.style.display = "none";
 
     // Stop recording gif
     recorder.stopRecording( () => {
@@ -234,6 +246,22 @@ function successHover(url) {
     btnsContainer.append(saveBtn, linkBtn);
     div.append(btnsContainer, img, text);
 
-    saveBtn.addEventListener('click', () =>  downloadGif(url));
-    linkBtn.addEventListener('click', () =>  getLink(url));
+    saveBtn.addEventListener('click', () => downloadGif(url));
+    linkBtn.addEventListener('click', () => getLink(url));
+}
+
+// Timer 
+function setTime() {
+    ++totalSeconds;
+    seconds.innerHTML = pad(totalSeconds%60);
+    minutes.innerHTML = pad(parseInt(totalSeconds/60));
+}
+
+function pad(val) {
+    var valString = val + "";
+    if(valString.length < 2) {
+        return "0" + valString;
+    } else {
+        return valString;
+    }
 }

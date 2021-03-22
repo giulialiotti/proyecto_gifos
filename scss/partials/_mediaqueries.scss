@@ -433,6 +433,7 @@
                     color: $white;
                 }
             }
+
             #createGifTextFirstLine, #createGifTextSecondLine {
                 font-family: $fontR;
                 font-size: rem(16px);
@@ -469,6 +470,24 @@
                     border: 1px solid $white;
                     color: $white;
                 }
+            }
+        }
+
+        .timer-container {
+            display: flex;
+            position: absolute;
+            z-index: 99;
+            right: 26.5%;
+            margin-top: -47px;
+
+            p {
+                font-family: $fontM;
+                font-weight: $boldM;
+                font-size: rem(15px);
+                color: $purple;
+                letter-spacing: 0;
+                text-align: center;
+                line-height: 22px;
             }
         }
 
