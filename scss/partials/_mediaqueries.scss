@@ -195,6 +195,10 @@
     #suggestionsList {
         margin: 0 auto;
 
+        .suggestions-list-divider {
+            width: 100%;
+        }
+
         .suggestions-li {
             margin: 10px 0 0 0;
 

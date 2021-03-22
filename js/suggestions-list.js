@@ -22,10 +22,10 @@ function drawSuggestions() {
   getSuggestions().then( data => {
     let suggestions = data.data;
 
-    // Create divider
-    let hr = document.createElement('hr');
-    hr.classList.add('suggestions-list-divider');
-    suggestionsList.appendChild(hr);
+    // // Create divider
+    // let hr = document.createElement('hr');
+    // hr.classList.add('suggestions-list-divider');
+    // suggestionsList.appendChild(hr);
 
     // Looping through the data and creating items
     suggestions.forEach(item => {

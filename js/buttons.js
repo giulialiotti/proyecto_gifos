@@ -99,7 +99,7 @@ function clearInput() {
     insertLupa.style.display = "none";
     searchInput.classList.remove('active-search');
     btnSearch.style.backgroundImage = "url('../assets/icon-search.svg')";
-    suggestionsList.removeChild(hr);
+    //suggestionsList.removeChild(hr);
 }
 
 // Function of event that on click clears field
@@ -132,6 +132,28 @@ function eventOnGrayLupa() {
         //See more button: when clicked show 12 more gifs
         eventSeeMoreButton(inputText);
     });
+}
+
+searchInput.addEventListener("keypress", searchOnEnter);
+
+function searchOnEnter(event) {
+    if(event.code == "Enter") {
+        // Clear suggestions list
+        suggestionsList.innerHTML = '';
+
+        clearInput();
+        searchResults();
+
+        // Get input text from local storage to use as title on results grid
+        let inputText = JSON.parse(localStorage.getItem('inputValue'));
+        changeTitleSearchResults(inputText);
+
+        // Empty input
+        searchInput.value = "";
+
+        //See more button: when clicked show 12 more gifs
+        eventSeeMoreButton(inputText);
+    }
 }
 
 // Add 12 more gifs on grid every time user clicks on see more button 
