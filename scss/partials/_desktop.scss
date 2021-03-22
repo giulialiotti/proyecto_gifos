@@ -191,6 +191,17 @@
         margin-bottom: rem(59px);
     }
 
+    #noResultsOnSearch {
+        .no-results-icon {
+            margin: 109px auto 29px;
+        }
+    
+        p {
+            font-size: rem(22px);
+            margin-bottom: rem(149px);
+        }
+    }
+
     // ---- ---- ---- ---- ---- SUGGESTIONS LIST ---- ---- ---- ---- ----
 
     #suggestionsList {

@@ -170,6 +170,27 @@ input::placeholder {
     }
 }
 
+#noResultsOnSearch {
+    .no-results-icon {
+        background-image: url('../assets/icon-busqueda-sin-resultado.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        height: rem(150px);
+        width: rem(150px);
+        margin: 60px auto 29px;
+    }
+
+    p {
+        font-family: $fontM;
+        font-weight: $boldM;
+        font-size: rem(18px);
+        color: $aqua;
+        text-align: center;
+        line-height: rem(25px);
+        margin-bottom: rem(60px);
+    }
+}
+
 // ---- ---- ---- ---- ---- SUGGESTIONS LIST ---- ---- ---- ---- ----
 
 #suggestionsList {

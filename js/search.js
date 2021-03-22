@@ -1,6 +1,8 @@
 // ---- ---- ---- ---- ----  ---- ---- ---- ---- ---- ---- ---- ---- ----
 // ---- ---- ---- ---- ---- SEARCH GIFOS RESULTS ---- ---- ---- ---- ----
 // ---- ---- ---- ---- ----  ---- ---- ---- ---- ---- ---- ---- ---- ----
+let noResultsOnSearch = document.getElementById('noResultsOnSearch');
+noResultsOnSearch.style.display = "none";
 
 // Hide, hr, trending text, grid and see more button while inactive
 hideSearchInactive();
@@ -13,7 +15,16 @@ function searchResults() {
 
   // Fetch searched term and draw results
   fetchSearchGifs(urlSearchEndpoint).then((gifs) => {
-    gifsLoop(gifs)
+    if (gifs.length === 0) {
+      // Show search without results page
+      trendingTitle.style.display = "block";
+      trendingText.style.display = "block";
+      noResultsOnSearch.style.display = "block";
+      searchResultsGifs.style.display = "none";
+      btnSeeMore.style.display = "none";
+    } else {
+      gifsLoop(gifs);
+    }
   });
 }
 
