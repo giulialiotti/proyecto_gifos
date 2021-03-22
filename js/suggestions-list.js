@@ -16,16 +16,16 @@ function drawSuggestions() {
   // Empty the list before drawing
   suggestionsList.innerHTML = '';
 
+  // Create divider
+  let hr = document.createElement('hr');
+  hr.classList.add('suggestions-list-divider');
+  suggestionsList.appendChild(hr);
+
   // Show magnifying glass next to input
-  lupaChanges();
+  lupaChanges(hr);
 
   getSuggestions().then( data => {
     let suggestions = data.data;
-
-    // // Create divider
-    // let hr = document.createElement('hr');
-    // hr.classList.add('suggestions-list-divider');
-    // suggestionsList.appendChild(hr);
 
     // Looping through the data and creating items
     suggestions.forEach(item => {

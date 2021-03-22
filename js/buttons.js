@@ -82,7 +82,7 @@ function downloadGif(url) {
 insertLupa.style.display = "none";
 
 // If suggestions list is active magnifying glass appears next to input container
-function lupaChanges() {
+function lupaChanges(hr) {
     if (searchInput.value !== "") {
         insertLupa.style.display = "block";
         insertLupa.classList.add('grey-lupa-input');
@@ -91,6 +91,7 @@ function lupaChanges() {
         eventOnGrayLupa();
     } else {
         clearInput();
+        hr.style.display ="none";
     }
 }
 
@@ -99,7 +100,6 @@ function clearInput() {
     insertLupa.style.display = "none";
     searchInput.classList.remove('active-search');
     btnSearch.style.backgroundImage = "url('../assets/icon-search.svg')";
-    //suggestionsList.removeChild(hr);
 }
 
 // Function of event that on click clears field
