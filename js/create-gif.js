@@ -13,6 +13,7 @@ const createGifText = document.getElementById('createGifText');
 let createGifTitle = document.getElementById('createGifTitle');
 let createGifTextFirstLine = document.getElementById('createGifTextFirstLine');
 let createGifTextSecondLine = document.getElementById('createGifTextSecondLine');
+const repeatCaption = document.getElementById('repeatCaption');
 
 // Numbers
 const numberOne = document.getElementById('numberOne');
@@ -49,6 +50,7 @@ recordBtn.style.display = "none";
 stopBtn.style.display = "none";
 uploadBtn.style.display = "none";
 timer.style.display = "none";
+repeatCaption.style.display = "none";
 
 beginBtn.addEventListener('click', () => {
     // Change text 
@@ -109,7 +111,11 @@ stopBtn.addEventListener('click', () => {
         let url = window.URL.createObjectURL(blob);
         console.log(url);
         //video.src = url;
-    });    
+    });
+    
+    // Show repeat caption
+    repeatCaption.style.display = "block";
+    repeatCaption.addEventListener('click', () => location.reload());
 })
 
 // ---- ---- ---- ---- ---- ---- UPLOAD PROCESS ---- ---- ---- ---- ---- ----

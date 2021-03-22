@@ -491,6 +491,27 @@
             }
         }
 
+        .repeat-caption {
+            position: absolute;
+            z-index: 99;
+            right: 26.5%;
+            margin-top: -47px;
+            font-family: $fontM;
+            font-weight: $boldM;
+            font-size: rem(13px);
+            color: $purple;
+            letter-spacing: 0;
+            text-align: center;
+            &::after {
+                content: "";
+                display: block;
+                margin: 0 auto;
+                width: 100%;
+                padding-top: .09375rem;
+                border-bottom: 2px solid #5ED7C6;
+            }
+        }
+
         .line {
             width: 55.3%;
             height: rem(6.9px);
