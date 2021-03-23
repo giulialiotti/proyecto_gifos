@@ -15,15 +15,17 @@ function searchResults() {
 
   // Fetch searched term and draw results
   fetchSearchGifs(urlSearchEndpoint).then((gifs) => {
-    if (gifs.length === 0) {
+    if (gifs.length > 0) {
+      console.log(gifs);
+      gifsLoop(gifs);
+    } else if (gifs.length === 0) {
+      console.log(gifs);
       // Show search without results page
       trendingTitle.style.display = "block";
       trendingText.style.display = "block";
       noResultsOnSearch.style.display = "block";
       searchResultsGifs.style.display = "none";
       btnSeeMore.style.display = "none";
-    } else {
-      gifsLoop(gifs);
     }
   });
 }

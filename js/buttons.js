@@ -88,7 +88,6 @@ function lupaChanges(hr) {
         insertLupa.classList.add('grey-lupa-input');
         searchInput.classList.add('active-search');
         eventOnCross();
-        eventOnGrayLupa();
     } else {
         clearInput();
         hr.style.display ="none";
@@ -134,7 +133,7 @@ function eventOnGrayLupa() {
     });
 }
 
-searchInput.addEventListener("keypress", searchOnEnter);
+eventOnGrayLupa();
 
 function searchOnEnter(event) {
     if(event.code == "Enter") {
@@ -167,3 +166,5 @@ function eventSeeMoreButton(inputText) {
         });
     });
 }
+
+searchInput.addEventListener("keypress", searchOnEnter);
